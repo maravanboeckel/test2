@@ -68,7 +68,7 @@ if rad == 'Plotting current weather':
     fig1.update_layout(title = "Humidity levels for each country", yaxis_title="Frequency")
     fig1.update_layout({'updatemenus':[{'type': "dropdown",'showactive': True,'active': 0,'buttons': dropdown_buttons}]})
     #fig.update_xaxes(scaleanchor = "x",scaleratio = 1)
-    st.plotly_chart(fig)
+    st.plotly_chart(fig1)
 
 
     fig2 = px.box(data_frame=current_weather, x='country',y='temp_c', title="Boxplots of the temperature per country ",
