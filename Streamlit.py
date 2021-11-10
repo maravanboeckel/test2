@@ -542,7 +542,7 @@ if rad == 'Weather forecast map':
 
 
 
-if rad == 'Plotting weather forecast':
+if rad == 'Plotting forecast weather':
 
     fig4 = go.Figure()
     for x in list(forecast['Date'].unique()):
