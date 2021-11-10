@@ -4,19 +4,14 @@
 # In[ ]:
 
 
-import requests
-import json
 import pandas as pd
-import time
 import plotly.express as px
-import matplotlib.pyplot as plt
 import folium
 from folium import plugins
 from statsmodels.formula.api import ols
 import numpy as np
 import streamlit as st
 from streamlit_folium import folium_static
-
 
 # In[ ]:
 
