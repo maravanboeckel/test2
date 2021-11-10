@@ -77,11 +77,11 @@ if rad == 'Plotting current weather':
     category_orders = {'country':['Netherlands','France','Germany','Portugal','United Kingdom','Belgium','Denmark','Spain','Ireland','Italy','Greece','Croatia','Austria','Turkey','Romania','Hungary','Bulgaria']},
                 color='country',color_discrete_map =city_color_map)
 
-    st_plotly_chart(fig2)
+    st.plotly_chart(fig2)
 
 
     fig3=px.scatter(current_weather,x='lat',y='temp_c',color='country',color_discrete_map =city_color_map,trendline="ols",trendline_scope='overall',trendline_color_override="grey",title='nog bedenken',labels={'lat':'Latitude','temp_c':'Temperature (°C)'})
-    st_plotly_chart(fig3)
+    st.plotly_chart(fig3)
     
     
     model1=ols('temp_c~lat',data=current_weather)
