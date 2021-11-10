@@ -206,339 +206,339 @@ if rad == 'Weather forecast map':
 
 
 
-data =['11-08 12h', '11-08 15h',
-       '11-08 18h', '11-08 21h',
-       '11-09 00h', '11-09 03h',
-       '11-09 06h', '11-09 09h',
-       '11-09 12h', '11-09 15h',
-       '11-09 18h', '11-09 21h',
-       '11-10 00h', '11-10 03h',
-       '11-10 06h', '11-10 09h',
-       '11-10 12h', '11-10 15h',
-       '11-10 18h', '11-10 21h',
-       '11-11 00h', '11-11 03h',
-       '11-11 06h', '11-11 09h',
-       '11-11 12h', '11-11 15h',
-       '11-11 18h', '11-11 21h',
-       '11-12 00h', '11-12 03h',
-       '11-12 06h', '11-12 09h',
-       '11-12 12h', '11-12 15h',
-       '11-12 18h', '11-12 21h',
-       '11-13 00h', '11-13 03h',
-       '11-13 06h', '11-13 09h']
+    data =['11-08 12h', '11-08 15h',
+           '11-08 18h', '11-08 21h',
+           '11-09 00h', '11-09 03h',
+           '11-09 06h', '11-09 09h',
+           '11-09 12h', '11-09 15h',
+           '11-09 18h', '11-09 21h',
+           '11-10 00h', '11-10 03h',
+           '11-10 06h', '11-10 09h',
+           '11-10 12h', '11-10 15h',
+           '11-10 18h', '11-10 21h',
+           '11-11 00h', '11-11 03h',
+           '11-11 06h', '11-11 09h',
+           '11-11 12h', '11-11 15h',
+           '11-11 18h', '11-11 21h',
+           '11-12 00h', '11-12 03h',
+           '11-12 06h', '11-12 09h',
+           '11-12 12h', '11-12 15h',
+           '11-12 18h', '11-12 21h',
+           '11-13 00h', '11-13 03h',
+           '11-13 06h', '11-13 09h']
 
 
-effecten = [folium.FeatureGroup(name=x,show=False)for x in data]
-tooltip = "Click for information"
-popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
-            ' Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
-            'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
-            'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
-            'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
-            'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')
-start=147
+    effecten = [folium.FeatureGroup(name=x,show=False)for x in data]
+    tooltip = "Click for information"
+    popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                ' Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')
+    start=147
 
 
-for row in forecast_weather.iloc[start*0:start*1].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[0])
-    effecten[0].add_to(map)
+    for row in forecast_weather.iloc[start*0:start*1].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[0])
+        effecten[0].add_to(map)
 
 
-for row in forecast_weather.iloc[start*1:start*2].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[1])
-    effecten[1].add_to(map)
-    
-for row in forecast_weather.iloc[start*2:start*3].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[2])
-    effecten[2].add_to(map)
-    
-    
-for row in forecast_weather.iloc[start*3:start*4].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[3])
-    effecten[3].add_to(map)
-    
-for row in forecast_weather.iloc[start*4:start*5].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[4])
-    effecten[4].add_to(map)
-    
-for row in forecast_weather.iloc[start*5:start*6].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[5])
-    effecten[5].add_to(map)
-    
-for row in forecast_weather.iloc[start*6:start*7].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[6])
-    effecten[6].add_to(map)
+    for row in forecast_weather.iloc[start*1:start*2].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[1])
+        effecten[1].add_to(map)
 
-    
-for row in forecast_weather.iloc[start*7:start*8].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[7])
-    effecten[7].add_to(map)
-    
-for row in forecast_weather.iloc[start*8:start*9].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[8])
-    effecten[8].add_to(map)
-    
-    
-for row in forecast_weather.iloc[start*9:start*10].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[9])
-    effecten[9].add_to(map)
-
-    
-for row in forecast_weather.iloc[start*10:start*11].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[10])
-    effecten[10].add_to(map)
-    
-for row in forecast_weather.iloc[start*11:start*12].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[11])
-    effecten[11].add_to(map)
-
-for row in forecast_weather.iloc[start*12:start*13].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[12])
-    effecten[12].add_to(map)
-
-for row in forecast_weather.iloc[start*13:start*14].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[13])
-    effecten[13].add_to(map)
-    
-for row in forecast_weather.iloc[start*14:start*15].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[14])
-    effecten[14].add_to(map)
-    
-for row in forecast_weather.iloc[start*15:start*16].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[15])
-    effecten[15].add_to(map)
-
-    
-for row in forecast_weather.iloc[start*16:start*17].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[16])
-    effecten[16].add_to(map)
-
-for row in forecast_weather.iloc[start*17:start*18].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[17])
-    effecten[17].add_to(map)
-    
-for row in forecast_weather.iloc[start*18:start*19].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[18])
-    effecten[18].add_to(map)
-    
-for row in forecast_weather.iloc[start*19:start*20].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[19])
-    effecten[19].add_to(map)
-    
-for row in forecast_weather.iloc[start*20:start*21].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[20])
-    effecten[20].add_to(map)
-    
-for row in forecast_weather.iloc[start*21:start*22].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[21])
-    effecten[21].add_to(map)
-    
-for row in forecast_weather.iloc[start*22:start*23].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[22])
-    effecten[22].add_to(map)
-    
-for row in forecast_weather.iloc[start*23:start*24].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[23])
-    effecten[23].add_to(map)
-    
-for row in forecast_weather.iloc[start*24:start*25].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[24])
-    effecten[24].add_to(map)
-    
-    
-    
-for row in forecast_weather.iloc[start*25:start*26].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[25])
-    effecten[25].add_to(map)
-
-    
-for row in forecast_weather.iloc[start*26:start*27].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[26])
-    effecten[26].add_to(map)    
-    
-    
-for row in forecast_weather.iloc[start*27:start*28].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[27])
-    effecten[27].add_to(map)    
-    
-for row in forecast_weather.iloc[start*28:start*29].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[28])
-    effecten[28].add_to(map)       
-    
-for row in forecast_weather.iloc[start*29:start*30].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[29])
-    effecten[29].add_to(map)      
-
-for row in forecast_weather.iloc[start*30:start*3].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[30])
-    effecten[30].add_to(map)  
-    
-for row in forecast_weather.iloc[start*31:start*32].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[31])
-    effecten[31].add_to(map)  
-    
-for row in forecast_weather.iloc[start*32:start*33].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[32])
-    effecten[32].add_to(map) 
-    
-for row in forecast_weather.iloc[start*33:start*34].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[33])
-    effecten[33].add_to(map)  
- 
-
-for row in forecast_weather.iloc[start*34:start*35].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[34])
-    effecten[34].add_to(map)   
-    
-    
-for row in forecast_weather.iloc[start*35:start*36].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[35])
-    effecten[35].add_to(map) 
-    
-for row in forecast_weather.iloc[start*36:start*37].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[36])
-    effecten[36].add_to(map)
-    
-for row in forecast_weather.iloc[start*37:start*38].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[37])
-    effecten[37].add_to(map) 
-    
-for row in forecast_weather.iloc[start*38:start*39].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[38])
-    effecten[38].add_to(map) 
-    
-for row in forecast_weather.iloc[start*39:start*40].iterrows():
-    row_values=row[1]
-    location=[row_values['lat'], row_values['lon']]
-    marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
-    marker.add_to(effecten[39])
-    effecten[39 ].add_to(map)
-    
-
-folium.LayerControl(position='topleft', title='Dagen').add_to(map)
+    for row in forecast_weather.iloc[start*2:start*3].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[2])
+        effecten[2].add_to(map)
 
 
-map
+    for row in forecast_weather.iloc[start*3:start*4].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[3])
+        effecten[3].add_to(map)
+
+    for row in forecast_weather.iloc[start*4:start*5].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[4])
+        effecten[4].add_to(map)
+
+    for row in forecast_weather.iloc[start*5:start*6].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[5])
+        effecten[5].add_to(map)
+
+    for row in forecast_weather.iloc[start*6:start*7].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[6])
+        effecten[6].add_to(map)
+
+
+    for row in forecast_weather.iloc[start*7:start*8].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[7])
+        effecten[7].add_to(map)
+
+    for row in forecast_weather.iloc[start*8:start*9].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[8])
+        effecten[8].add_to(map)
+
+
+    for row in forecast_weather.iloc[start*9:start*10].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[9])
+        effecten[9].add_to(map)
+
+
+    for row in forecast_weather.iloc[start*10:start*11].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[10])
+        effecten[10].add_to(map)
+
+    for row in forecast_weather.iloc[start*11:start*12].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[11])
+        effecten[11].add_to(map)
+
+    for row in forecast_weather.iloc[start*12:start*13].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[12])
+        effecten[12].add_to(map)
+
+    for row in forecast_weather.iloc[start*13:start*14].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[13])
+        effecten[13].add_to(map)
+
+    for row in forecast_weather.iloc[start*14:start*15].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[14])
+        effecten[14].add_to(map)
+
+    for row in forecast_weather.iloc[start*15:start*16].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[15])
+        effecten[15].add_to(map)
+
+
+    for row in forecast_weather.iloc[start*16:start*17].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[16])
+        effecten[16].add_to(map)
+
+    for row in forecast_weather.iloc[start*17:start*18].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[17])
+        effecten[17].add_to(map)
+
+    for row in forecast_weather.iloc[start*18:start*19].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[18])
+        effecten[18].add_to(map)
+
+    for row in forecast_weather.iloc[start*19:start*20].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[19])
+        effecten[19].add_to(map)
+
+    for row in forecast_weather.iloc[start*20:start*21].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[20])
+        effecten[20].add_to(map)
+
+    for row in forecast_weather.iloc[start*21:start*22].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[21])
+        effecten[21].add_to(map)
+
+    for row in forecast_weather.iloc[start*22:start*23].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[22])
+        effecten[22].add_to(map)
+
+    for row in forecast_weather.iloc[start*23:start*24].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[23])
+        effecten[23].add_to(map)
+
+    for row in forecast_weather.iloc[start*24:start*25].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[24])
+        effecten[24].add_to(map)
+
+
+
+    for row in forecast_weather.iloc[start*25:start*26].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[25])
+        effecten[25].add_to(map)
+
+
+    for row in forecast_weather.iloc[start*26:start*27].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[26])
+        effecten[26].add_to(map)    
+
+
+    for row in forecast_weather.iloc[start*27:start*28].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[27])
+        effecten[27].add_to(map)    
+
+    for row in forecast_weather.iloc[start*28:start*29].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[28])
+        effecten[28].add_to(map)       
+
+    for row in forecast_weather.iloc[start*29:start*30].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[29])
+        effecten[29].add_to(map)      
+
+    for row in forecast_weather.iloc[start*30:start*3].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[30])
+        effecten[30].add_to(map)  
+
+    for row in forecast_weather.iloc[start*31:start*32].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[31])
+        effecten[31].add_to(map)  
+
+    for row in forecast_weather.iloc[start*32:start*33].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[32])
+        effecten[32].add_to(map) 
+
+    for row in forecast_weather.iloc[start*33:start*34].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[33])
+        effecten[33].add_to(map)  
+
+
+    for row in forecast_weather.iloc[start*34:start*35].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[34])
+        effecten[34].add_to(map)   
+
+
+    for row in forecast_weather.iloc[start*35:start*36].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[35])
+        effecten[35].add_to(map) 
+
+    for row in forecast_weather.iloc[start*36:start*37].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[36])
+        effecten[36].add_to(map)
+
+    for row in forecast_weather.iloc[start*37:start*38].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[37])
+        effecten[37].add_to(map) 
+
+    for row in forecast_weather.iloc[start*38:start*39].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[38])
+        effecten[38].add_to(map) 
+
+    for row in forecast_weather.iloc[start*39:start*40].iterrows():
+        row_values=row[1]
+        location=[row_values['lat'], row_values['lon']]
+        marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        marker.add_to(effecten[39])
+        effecten[39 ].add_to(map)
+
+
+    folium.LayerControl(position='topleft', title='Dagen').add_to(map)
+
+
+    map
     
     
 
@@ -549,12 +549,12 @@ map
 
 if rad == 'Plotting weather forecast':
 
-fig4 = go.Figure()
-for x in list(forecast['Date'].unique()):
-        df11 = forecast[forecast['Date'] == x]
-        fig4.add_trace(go.Bar(x=df11['name'], y=df11['temp_c'], name=x))
+    fig4 = go.Figure()
+    for x in list(forecast['Date'].unique()):
+            df11 = forecast[forecast['Date'] == x]
+            fig4.add_trace(go.Bar(x=df11['name'], y=df11['temp_c'], name=x))
 
-hour_to_filter = st.slider('Date', '2021-11-08 12:00:00', '2021-11-13 09:00:00', '2021-11-08 12:00:00')  
-filtered_data = Forecast_compleet[Forecast_compleet['Date']== hour_to_filter]        
-st.map(filtered_data)
+    hour_to_filter = st.slider('Date', '2021-11-08 12:00:00', '2021-11-13 09:00:00', '2021-11-08 12:00:00')  
+    filtered_data = Forecast_compleet[Forecast_compleet['Date']== hour_to_filter]        
+    st.map(filtered_data)
 
