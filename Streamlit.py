@@ -195,7 +195,7 @@ if rad == 'Current weather map':
 
 if rad == 'Weather forecast map':
     
-    forecast_weather = pd.read_csv('Forecast_compleet.csv')
+    forecast_weather = pd.read_csv(forecast_sorted.csv')
     
     map = folium.Map(location=[52.0893191, 5.1101691], zoom_start = 4)
 
