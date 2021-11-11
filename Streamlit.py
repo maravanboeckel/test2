@@ -817,7 +817,7 @@ if rad == 'Plotting forecast weather':
     
     
     data_nl = forecast_weather[forecast_weather['country'].str.contains("Netherlands").reset_index()
-    data_fr = forecast_weather[forecast_weather['country'].str.contains("France").reset_index()
+    #data_fr = forecast_weather[forecast_weather['country'].str.contains("France").reset_index()
     data_ge = forecast_weather[forecast_weather['country'].str.contains("Germany").reset_index()
     data_pt = forecast_weather[forecast_weather['country'].str.contains("Portugal").reset_index()
     data_uk = forecast_weather[forecast_weather['country'].str.contains("United Kingdom").reset_index()
@@ -889,10 +889,10 @@ if rad == 'Plotting forecast weather':
         fignl = px.bar(data_nl, x="City", y="temp_c") 
         fignl.update_layout({'sliders': sliders})      
         st.plotly_chart(fignl)
-    if dropdown=="France" :
-        figfr = px.bar(data_fr, x="City", y="temp_c") 
-        figfr.update_layout({'sliders': sliders})      
-        st.plotly_chart(figfr)                        
+    #if dropdown=="France" :
+        #figfr = px.bar(data_fr, x="City", y="temp_c") 
+        #figfr.update_layout({'sliders': sliders})      
+        #st.plotly_chart(figfr)                        
     if dropdown=="Germany" :
         figge = px.bar(data_ge, x="City", y="temp_c") 
         figge.update_layout({'sliders': sliders})      
