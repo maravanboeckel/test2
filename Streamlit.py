@@ -835,7 +835,7 @@ if rad == 'Plotting forecast weather':
     data_bu = forecast_weather[forecast_weather['country'].str.contains("Bulgaria")].reset_index()                          
     data_cr = forecast_weather[forecast_weather['country'].str.contains("Croatia")].reset_index()
                                
-    dropdown = st.selectbox('Select country', ("Netherlands","France", "Germany","Portugal","United Kingdom","Belgium","Denmark","Spain","Ireland","Italy", "Greece","Austria","Turkey","Romania", "Hungary","Bulgaria","Croatia"))                          
+    dropdown = st.selectbox('Select country', ("Netherlands","France", "Germany","Portugal","United Kingdom","Belgium","Denmark","Spain","Ireland","Italy", "Greece","Austria","Turkey","Romania", "Hungary","Croatia"))                          
    
     sliders = [
     {'steps':[
@@ -1028,7 +1028,7 @@ if rad == 'Plotting forecast weather':
             df27 = data_cr[data_cr['dt_txt'] == x]
             figcr.add_trace(go.Bar(x=df27['name'], y=df27['temp_c'], name=x))
         figcr.update_layout({'sliders': sliders}) 
-        figct.update_layout(yaxis_range=[0,20])
-        figct.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
+        figcr.update_layout(yaxis_range=[0,20])
+        figcr.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
         st.plotly_chart(figcr)                        
                               
