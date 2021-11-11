@@ -12,7 +12,7 @@ from statsmodels.formula.api import ols
 import numpy as np
 import streamlit as st
 from streamlit_folium import folium_static
-
+from PIL import Image
 # In[ ]:
 
 
