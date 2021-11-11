@@ -13,6 +13,7 @@ import numpy as np
 import streamlit as st
 from streamlit_folium import folium_static
 from PIL import Image
+from folium.plugins import FloatImage
 # In[ ]:
 
 
@@ -216,10 +217,13 @@ if rad == 'Current weather map':
     folium.LayerControl(position='topleft').add_to(current_weather_map)
 
     folium.PolyLine(evenaar,color="red").add_to(current_weather_map)
-
-    folium_static(current_weather_map)
     imglegenda= Image.open("legenda.png")
-    st.image(imglegenda)
+    FloatImage(imglegenda, top=0, right=0).add_to(current_weather_map)
+    folium_static(current_weather_map)
+    
+ 
+    
+  
 
 # In[ ]:
 
