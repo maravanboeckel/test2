@@ -919,7 +919,7 @@ if rad == 'Plotting forecast weather':
             df14 = data_pt[data_pt['dt_txt'] == x]
             figpt.add_trace(go.Bar(x=df14['name'], y=df14['temp_c'], name=x))
         figpt.update_layout({'sliders': sliders}) 
-        .update_layout(yaxis_range=[0,25])
+        figpt.update_layout(yaxis_range=[0,25])
         figpt.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
         st.plotly_chart(figpt)                            
     if dropdown=="United Kingdom" :
