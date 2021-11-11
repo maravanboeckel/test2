@@ -944,7 +944,7 @@ if rad == 'Plotting forecast weather':
             figbe.add_trace(go.Bar(x=df16['name'], y=df16['temp_c'], name=x))
         figbe.update_layout({'sliders': sliders})   
         figbe.update_layout(yaxis_range=[0,15])
-        figbe.update_xaxes(categoryarray=['Antwerp','Brussel','Ghent','Luik','Charleroi','Bruges','Namur','Leuven','Mons','Aalst']) 
+        figbe.update_xaxes(categoryarray=['Antwerp','Brussels','Ghent','Liège','Charleroi','Bruges','Namur','Leuven','Mons','Aalst']) 
         figbe.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
         st.plotly_chart(figbe)                          
     if dropdown=="Denmark" :
