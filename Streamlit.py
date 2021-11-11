@@ -217,14 +217,11 @@ if rad == 'Current weather map':
     folium.LayerControl(position='topleft').add_to(current_weather_map)
 
     folium.PolyLine(evenaar,color="red").add_to(current_weather_map)
-    
-    m1 = add_categorical_legend(m1, 'Temperature', colors =['#0000FF','#FFFF00','#FF6600','#FF0000'],labels = ['Under 10 °C', 'Between 10 °C and 20 °C','Between 20 °C and 28 °C','Above 28 °C']).add_to(current_weather_map)
-    m2 = add_categorical_legend(m2, 'Pressure',colors = ['#0000FF','#008000','#FF0000'],labels = ['Low pressure (<1009 hPa)','Normal pressure (>=1009 and <1022 hPa)','High pressure (>=1022 hPa)']).add_to(current_weather_map)
-
-
+   
     folium_static(current_weather_map)
     
- 
+    imglegend = Image.open("legenda2.png")
+    st.image(imglegend, width=800)
     
   
 
