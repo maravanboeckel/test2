@@ -94,19 +94,22 @@ if rad == 'Plotting current weather':
                 color='country',color_discrete_map =city_color_map)
 
     st.plotly_chart(fig2)
-
+    ##############################################################################################################
+    st.markdown('#')
 
     fig3=px.scatter(current_weather,x='lat',y='temp_c',color='country',color_discrete_map =city_color_map,trendline="ols",trendline_scope='overall',trendline_color_override="grey",title='nog bedenken',labels={'lat':'Latitude','temp_c':'Temperature (°C)'})
     st.plotly_chart(fig3)
     img = Image.open("summary lat.png")
     st.image(img, width=800)
-    
+    ##############################################################################################################
+    st.markdown('#')
     
     fig4=px.scatter(current_weather,x="temp_diff",y="speed",color='country',color_discrete_map =city_color_map,trendline="ols",trendline_color_override="grey",trendline_scope='overall',title='nog bedenken',labels={'temp_diff':'Tempeture difference','speed':'Windspeed (km/h)'})
     st.plotly_chart(fig4)
     img1 = Image.open("summary speed.png")
     st.image(img1, width=800)
-    
+    ##############################################################################################################
+    st.markdown('#')
     img2 = Image.open("corr.png")
     st.image(img2, width=800)
 
@@ -246,25 +249,33 @@ if rad == 'Forecast weather map':
 
     effecten = [folium.FeatureGroup(name=x,show=False)for x in data]
     tooltip = "Click for information"
-    popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
-                ' Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
-                'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
-                'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
-                'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
-                'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')
+
     start=147
 
 
     for row in forecast_weather.iloc[start*0:start*1].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')       
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
+        
         marker.add_to(effecten[0])
         effecten[0].add_to(map)
 
 
     for row in forecast_weather.iloc[start*1:start*2].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[1])
@@ -272,16 +283,26 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*2:start*3].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[2])
         effecten[2].add_to(map)
 
 
-    for row in forecast_weather.iloc[start*3:start*4].iterrows():
+    for row in forecast_weather.iloc[start*3:start*4].iterrows()
         row_values=row[1]
-        location=[row_values['lat'], row_values['lon']]
-        row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[3])
@@ -289,6 +310,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*4:start*5].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[4])
@@ -296,6 +323,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*5:start*6].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[5])
@@ -311,6 +344,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*7:start*8].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
 
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
@@ -319,6 +358,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*8:start*9].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[8])
@@ -327,6 +372,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*9:start*10].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[9])
@@ -335,6 +386,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*10:start*11].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[10])
@@ -342,6 +399,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*11:start*12].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[11])
@@ -349,6 +412,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*12:start*13].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[12])
@@ -356,6 +425,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*13:start*14].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[13])
@@ -363,6 +438,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*14:start*15].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[14])
@@ -370,6 +451,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*15:start*16].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[15])
@@ -378,6 +465,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*16:start*17].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[16])
@@ -385,6 +478,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*17:start*18].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[17])
@@ -392,6 +491,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*18:start*19].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[18])
@@ -399,6 +504,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*19:start*20].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[19])
@@ -406,6 +517,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*20:start*21].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[20])
@@ -413,6 +530,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*21:start*22].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[21])
@@ -420,6 +543,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*22:start*23].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[22])
@@ -427,6 +556,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*23:start*24].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[23])
@@ -434,6 +569,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*24:start*25].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[24])
@@ -443,6 +584,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*25:start*26].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[25])
@@ -451,6 +598,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*26:start*27].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[26])
@@ -459,6 +612,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*27:start*28].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[27])
@@ -466,6 +625,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*28:start*29].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[28])
@@ -473,6 +638,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*29:start*30].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[29])
@@ -480,6 +651,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*30:start*3].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[30])
@@ -487,6 +664,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*31:start*32].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[31])
@@ -494,6 +677,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*32:start*33].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[32])
@@ -501,6 +690,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*33:start*34].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[33])
@@ -509,6 +704,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*34:start*35].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[34])
@@ -517,6 +718,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*35:start*36].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[35])
@@ -524,6 +731,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*36:start*37].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[36])
@@ -531,6 +744,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*37:start*38].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[37])
@@ -538,6 +757,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*38:start*39].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[38])
@@ -545,6 +770,12 @@ if rad == 'Forecast weather map':
 
     for row in forecast_weather.iloc[start*39:start*40].iterrows():
         row_values=row[1]
+        popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
+                    'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+                    'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+                    'Pressure: ' + str(round(row_values['pressure'],2))+ 'hPa' + '<br>'+
+                    'Sunrise: ' + str(row_values['sunrise'],) + 'UTC'+ '<br>' +
+                    'Sunset: ' + str(row_values['sunset'])+ 'UTC' + '<br>')    
         location=[row_values['lat'], row_values['lon']]
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[39])
