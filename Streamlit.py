@@ -47,7 +47,10 @@ if rad== 'Home':
     '- API'
 
 if rad == 'Plotting current weather':
-
+    st.header('Plotting current weather')
+    st.markdown('#')
+  
+    'The figure below shows the histograms of the humidity for each country. You can select the countries with de dropdown. '
     current_weather = pd.read_csv('Weather_compleet.csv')
     
     city_color_map = {'Netherlands': 'rgb(240,128,128)','United Kingdom': 'rgb(135,206,235)','France': 'rgb(216, 191,216)',
@@ -79,14 +82,14 @@ if rad == 'Plotting current weather':
                        ]
     fig1 = px.histogram(data_frame=current_weather, x='humidity', color_discrete_map =city_color_map,
                        color='country', nbins=15,
-                       labels={'humidity':'Humidity', 'country':'Country'})
+                       labels={'humidity':'Humidity (%)', 'country':'Country'})
     fig1.update_layout(title = "Humidity levels for each country", yaxis_title="Frequency")
     fig1.update_layout({'updatemenus':[{'type': "dropdown",'showactive': True,'active': 0,'buttons': dropdown_buttons}]})
     fig1.update_xaxes(fixedrange=True)
     fig1.update_yaxes(fixedrange=True)
     st.plotly_chart(fig1)
 
-
+    'The figure below shows the boxplots of the temperature for each country. '
     fig2 = px.box(data_frame=current_weather, x='country',y='temp_c', title="Boxplots of the temperature per country ",
                  labels={"temp_c": "Temperature (°C)",
                          "country": "Country"},
@@ -96,20 +99,21 @@ if rad == 'Plotting current weather':
     st.plotly_chart(fig2)
     ##############################################################################################################
     st.markdown('#')
-
-    fig3=px.scatter(current_weather,x='lat',y='temp_c',color='country',color_discrete_map =city_color_map,trendline="ols",trendline_scope='overall',trendline_color_override="grey",title='nog bedenken',labels={'lat':'Latitude','temp_c':'Temperature (°C)'})
+    st.subheader('Scatterplots with predictions')
+    fig3=px.scatter(current_weather,x='lat',y='temp_c',color='country',color_discrete_map =city_color_map,trendline="ols",trendline_scope='overall',trendline_color_override="grey",title='Scatterplot of the temperature vs latitude',labels={'lat':'Latitude','temp_c':'Temperature (°C)'})
     st.plotly_chart(fig3)
     img = Image.open("summary lat.png")
     st.image(img, width=800)
     ##############################################################################################################
     st.markdown('#')
     
-    fig4=px.scatter(current_weather,x='temp_diff',y='speed',color='country',color_discrete_map =city_color_map,trendline="ols",trendline_color_override="grey",trendline_scope='overall',title='nog bedenken',labels={'temp_diff':'Tempeture difference','speed':'Windspeed (km/h)'})
+    fig4=px.scatter(current_weather,x='temp_diff',y='speed',color='country',color_discrete_map =city_color_map,trendline="ols",trendline_color_override="grey",trendline_scope='overall',title='Scatterplot of the windspeed difference vs temperature',labels={'temp_diff':'Tempeture difference','speed':'Windspeed (km/h)'})
     st.plotly_chart(fig4)
     img1 = Image.open("summary speed.png")
     st.image(img1, width=800)
     ##############################################################################################################
     st.markdown('#')
+    st.subheader('Correlation for each variable')
     img2 = Image.open("corr.png")
     st.image(img2, width=800)
 
@@ -117,7 +121,10 @@ if rad == 'Plotting current weather':
 
 
 if rad == 'Current weather map':
-    
+    st.header('Current weather map')
+    st.markdown('#')
+  
+    'The figure below shows the map of the weather on 6 november 2021. With the layer control you can select the information of your choice.'
     current_weather = pd.read_csv('Weather_compleet.csv')
     
     def colorspressure(pressure):
@@ -218,7 +225,10 @@ if rad == 'Current weather map':
 
 
 if rad == 'Forecast weather map':
-    
+    st.header('Forecast weather map')
+    st.markdown('#')
+  
+    'The figure below shows the map of the forecast weather from 8 november to 13 november 2021. There is a measuring point every 3 hours. With the layer control you can select the day and time of your choice.'
     forecast_weather = pd.read_csv('forecast_sorted.csv')
     
     map = folium.Map(location=[52.0893191, 5.1101691], zoom_start = 4)
@@ -797,6 +807,10 @@ if rad == 'Forecast weather map':
 if rad == 'Plotting forecast weather':
     forecast_weather = pd.read_csv('forecast_sorted.csv')
     st.header("Plotting forecast weather")
+    'NOG EEN TEKST'
+    st.markdown('#')
+  
+    'The figure below shows the map of the weather on 6 november 2021. With the layer control you can select the information of your choice.'
     
 #     data_nl = forecast_weather[forecast_weather['country'].str.contains("Netherlands").reset_index()
 #     data_fr = forecast_weather[forecast_weather['country'].str.contains("France").reset_index()
