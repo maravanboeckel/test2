@@ -40,8 +40,8 @@ if rad== 'Home':
     st.markdown('#')
     st.subheader('Bibliography')
     '- Max Vandaag. (2021, 20 maart). [Hoge en lage drukgebieden]. Het weer: het maken van een weersverwachting. https://www.maxvandaag.nl/sessies/themas/natuur-milieu/het-maken-van-een-weersverwachting/'
-    '- API'
-    '- API'
+    '- RapidAPI. (z.d.). OpenWeatherMap API - Free Weather Data (for Developers). Geraadpleegd op 11 november 2021, van https://community-open-weather-map.p.rapidapi.com/weather'
+    '- RapidAPI. (z.d.). OpenWeatherMap API - Free Weather Data (for Developers). Geraadpleegd op 11 november 2021, van https://community-open-weather-map.p.rapidapi.com/forecast'
 
 if rad == 'Plotting current weather':
     st.header('Plotting current weather')
@@ -142,7 +142,7 @@ if rad == 'Current weather map':
             color = 'blue'
             return color
         elif temp >= 10 and temp < 20:
-            color = 'orange'
+            color = 'yellow'
             return color
         elif temp >= 20 and temp <28:
             color = 'orange'
@@ -151,7 +151,7 @@ if rad == 'Current weather map':
             color = 'red'
             return color
 
-    #current_weather_map = folium.Map(location=[52.0893191, 5.1101691], zoom_start = 4)
+    
     current_weather_map = folium.Map(location=[45.07033935, 7.686864], zoom_start = 4)
 
 
@@ -218,7 +218,8 @@ if rad == 'Current weather map':
     folium.PolyLine(evenaar,color="red").add_to(current_weather_map)
 
     folium_static(current_weather_map)
-
+    imglegenda= Image.open("legenda.png")
+    st.image(imglegenda)
 
 # In[ ]:
 
@@ -230,7 +231,7 @@ if rad == 'Forecast weather map':
     'The figure below shows the map of the forecast weather from 8 november to 13 november 2021. There is a measuring point every 3 hours. With the layer control you can select the day and time of your choice.'
     forecast_weather = pd.read_csv('forecast_sorted.csv')
     
-    #map = folium.Map(location=[52.0893191, 5.1101691], zoom_start = 4)
+   
     map = folium.Map(location=[45.07033935, 7.686864], zoom_start = 4)
 
 
