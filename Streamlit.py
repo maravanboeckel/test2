@@ -795,6 +795,7 @@ if rad == 'Forecast weather map':
 
 
 if rad == 'Plotting forecast weather':
+    forecast_weather = pd.read_csv('forecast_sorted.csv')
     st.header("Plotting forecast weather")
     
     data_nl = forecast_weather[forecast_weather['country'].str.contains("Netherlands").reset_index()
@@ -903,7 +904,7 @@ if rad == 'Plotting forecast weather':
         figie.update_layout({'sliders': sliders})      
         st.plotly_chart(figie)                            
     if dropdown=="Italy" :
-         figit = px.bar(data_it, x="City", y="temp_c") 
+        figit = px.bar(data_it, x="City", y="temp_c") 
         figit.update_layout({'sliders': sliders})      
         st.plotly_chart(figit)                           
     if dropdown=="Greece" :
