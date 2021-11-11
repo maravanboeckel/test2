@@ -18,18 +18,33 @@ from streamlit_folium import folium_static
 
 #sidebar
 st.set_page_config(layout="wide")
-rad = st.sidebar.radio(options=('Home','Current weather map','Plotting current weather','Forecast weather map','Plotting forecast weather'),label='Selecteer')
+rad = st.sidebar.radio(options=('Home','Current weather map','Plotting current weather','Forecast weather map','Plotting forecast weather'),label='Select category')
 
 st.sidebar.markdown('#')
 st.sidebar.markdown('#')
 
-st.sidebar.subheader('Gemaakt door:')
+st.sidebar.subheader(Made by:')
 st.sidebar.write('Mara van Boeckel')
 st.sidebar.write('Maarten van der Veer')
 
 
 # In[ ]:
-
+if rad== 'Home'
+    st.title('Dashboard (forecast) weather')
+    imghome = Image.open("weer.png")
+    st.image(imghome, width=800)
+    st.markdown('#')
+    st.markdown('#')
+    st.markdown('#')
+    st.markdown('#')
+    st.markdown('#')
+    st.markdown('#')
+    st.markdown('#')
+    st.markdown('#')
+    st.subheader('Bibliography')
+    '- Max Vandaag. (2021, 20 maart). [Hoge en lage drukgebieden]. Het weer: het maken van een weersverwachting. https://www.maxvandaag.nl/sessies/themas/natuur-milieu/het-maken-van-een-weersverwachting/'
+    '- API'
+    '- API'
 
 if rad == 'Plotting current weather':
 
@@ -83,16 +98,16 @@ if rad == 'Plotting current weather':
     fig3=px.scatter(current_weather,x='lat',y='temp_c',color='country',color_discrete_map =city_color_map,trendline="ols",trendline_scope='overall',trendline_color_override="grey",title='nog bedenken',labels={'lat':'Latitude','temp_c':'Temperature (°C)'})
     st.plotly_chart(fig3)
     img = Image.open("summary lat.png")
-    st.image(img)
+    st.image(img, width=800)
     
     
     fig4=px.scatter(current_weather,x="temp_diff",y="speed",color='country',color_discrete_map =city_color_map,trendline="ols",trendline_color_override="grey",trendline_scope='overall',title='nog bedenken',labels={'temp_diff':'Tempeture difference','speed':'Windspeed (km/h)'})
     fig4.show()
     img1 = Image.open("summary speed.png")
-    st.image(img1)
+    st.image(img1, width=800)
     
     img2 = Image.open("corr.png")
-    st.image(img2)
+    st.image(img2, width=800)
 
 # In[ ]:
 
