@@ -47,7 +47,7 @@ if rad == 'Plotting current weather':
     st.header('Plotting current weather')
     st.markdown('#')
   
-    'The figure below shows the histograms of the humidity for each country. You can select the countries with de dropdown. '
+    'The figure below shows the histograms of the humidity for each country on 6 november 2021. You can select the countries with de dropdown. '
     current_weather = pd.read_csv('Weather_compleet.csv')
     
     city_color_map = {'Netherlands': 'rgb(240,128,128)','United Kingdom': 'rgb(135,206,235)','France': 'rgb(216, 191,216)',
@@ -97,14 +97,14 @@ if rad == 'Plotting current weather':
     ##############################################################################################################
     st.markdown('#')
     st.subheader('Scatterplots with predictions')
-    fig3=px.scatter(current_weather,x='lat',y='temp_c',color='country',color_discrete_map =city_color_map,trendline="ols",trendline_scope='overall',trendline_color_override="grey",title='Scatterplot of the temperature vs latitude',labels={'lat':'Latitude','temp_c':'Temperature (°C)'})
+    fig3=px.scatter(current_weather,x='lat',y='temp_c',color='country',color_discrete_map =city_color_map,trendline="ols",trendline_scope='overall',trendline_color_override="grey",title='Scatterplot of the temperature vs latitude',labels={'lat':'Latitude','temp_c':'Temperature (°C)',"country": "Country"})
     st.plotly_chart(fig3)
     img = Image.open("summary lat.png")
     st.image(img, width=800)
     ##############################################################################################################
     st.markdown('#')
     
-    fig4=px.scatter(current_weather,x='temp_diff',y='speed',color='country',color_discrete_map =city_color_map,trendline="ols",trendline_color_override="grey",trendline_scope='overall',title='Scatterplot of the windspeed difference vs temperature',labels={'temp_diff':'Tempeture difference','speed':'Windspeed (km/h)'})
+    fig4=px.scatter(current_weather,x='temp_diff',y='speed',color='country',color_discrete_map =city_color_map,trendline="ols",trendline_color_override="grey",trendline_scope='overall',title='Scatterplot of the windspeed difference vs temperature',labels={'temp_diff':'Temperature difference','speed':'Windspeed (km/h)',"country": "Country"})
     st.plotly_chart(fig4)
     img1 = Image.open("summary speed.png")
     st.image(img1, width=800)
@@ -196,7 +196,7 @@ if rad == 'Current weather map':
     for row in current_weather.iterrows():
         row_values=row[1]
         location=[row_values['lat'], row_values['lon']]
-        marker = folium.CircleMarker(location=location,tooltip = str(round(row_values['pressure'],2)),radius=6,fill=True,opacity=1,color=colorspressure(row_values['pressure']))
+        marker = folium.CircleMarker(location=location,tooltip = str(round(row_values['pressure'],2))+'hPa',radius=6,fill=True,opacity=1,color=colorspressure(row_values['pressure']))
         marker.add_to(effecten[3])
         effecten[3].add_to(current_weather_map)
 
