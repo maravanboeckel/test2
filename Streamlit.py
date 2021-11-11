@@ -82,12 +82,17 @@ if rad == 'Plotting current weather':
 
     fig3=px.scatter(current_weather,x='lat',y='temp_c',color='country',color_discrete_map =city_color_map,trendline="ols",trendline_scope='overall',trendline_color_override="grey",title='nog bedenken',labels={'lat':'Latitude','temp_c':'Temperature (°C)'})
     st.plotly_chart(fig3)
+    img = Image.open("summary lat.jpeg")
+    st.image(img)
     
     
-    model1=ols('temp_c~lat',data=current_weather)
-    model1=model1.fit()
-    print(model1.summary())
-
+    fig4=px.scatter(current_weather,x="temp_diff",y="speed",color='country',color_discrete_map =city_color_map,trendline="ols",trendline_color_override="grey",trendline_scope='overall',title='nog bedenken',labels={'temp_diff':'Tempeture difference','speed':'Windspeed (km/h)'})
+    fig4.show()
+    img1 = Image.open("summary speed.jpeg")
+    st.image(img1)
+    
+    img2 = Image.open("corr.jpeg")
+    st.image(img2)
 
 # In[ ]:
 
