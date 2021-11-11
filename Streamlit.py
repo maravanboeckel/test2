@@ -812,7 +812,7 @@ if rad == 'Forecast weather map':
 if rad == 'Plotting forecast weather':
     forecast_weather = pd.read_csv('forecast_sorted.csv')
     st.header("Plotting forecast weather")
-    'The figure below shows the barplots of the forecast weather from 8 november to 13 november 2021 (every 3 hours) for each country and city.'
+    'The figure below shows the barplots of the temperature of the forecast weather from 8 november to 13 november 2021 (every 3 hours) for each country and city. You can select the country of your choice'
     st.markdown('#')
   
     
