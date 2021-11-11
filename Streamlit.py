@@ -810,141 +810,141 @@ if rad == 'Plotting forecast weather':
   
     
     
-    data_nl = forecast_weather[forecast_weather['country'].str.contains("Netherlands").reset_index()
-    data_fr = forecast_weather[forecast_weather['country'].str.contains("France").reset_index()
-    data_ge = forecast_weather[forecast_weather['country'].str.contains("Germany").reset_index()
-    data_pt = forecast_weather[forecast_weather['country'].str.contains("Portugal").reset_index()
-    data_uk = forecast_weather[forecast_weather['country'].str.contains("United Kingdom").reset_index()
-    data_be = forecast_weather[forecast_weather['country'].str.contains("Belgium").reset_index()
-    data_dk = forecast_weather[forecast_weather['country'].str.contains("Denmark").reset_index()                           
-    data_es = forecast_weather[forecast_weather['country'].str.contains("Spain").reset_index()                           
-    data_ie = forecast_weather[forecast_weather['country'].str.contains("Ireland").reset_index()                           
-    data_it = forecast_weather[forecast_weather['country'].str.contains("Italy").reset_index()                            
-    data_gr = forecast_weather[forecast_weather['country'].str.contains("Greece").reset_index()                           
-    data_au = forecast_weather[forecast_weather['country'].str.contains("Austria").reset_index()                           
-    data_tu = forecast_weather[forecast_weather['country'].str.contains("Turkey").reset_index()      
-    data_ro = forecast_weather[forecast_weather['country'].str.contains("Romania").reset_index()                           
-    data_hu = forecast_weather[forecast_weather['country'].str.contains("Hungary").reset_index()                           
-    data_bu = forecast_weather[forecast_weather['country'].str.contains("Bulgaria").reset_index()                          
-    data_cr = forecast_weather[forecast_weather['country'].str.contains("Croatia").reset_index()
+#     data_nl = forecast_weather[forecast_weather['country'].str.contains("Netherlands").reset_index()
+#     data_fr = forecast_weather[forecast_weather['country'].str.contains("France").reset_index()
+#     data_ge = forecast_weather[forecast_weather['country'].str.contains("Germany").reset_index()
+#     data_pt = forecast_weather[forecast_weather['country'].str.contains("Portugal").reset_index()
+#     data_uk = forecast_weather[forecast_weather['country'].str.contains("United Kingdom").reset_index()
+#     data_be = forecast_weather[forecast_weather['country'].str.contains("Belgium").reset_index()
+#     data_dk = forecast_weather[forecast_weather['country'].str.contains("Denmark").reset_index()                           
+#     data_es = forecast_weather[forecast_weather['country'].str.contains("Spain").reset_index()                           
+#     data_ie = forecast_weather[forecast_weather['country'].str.contains("Ireland").reset_index()                           
+#     data_it = forecast_weather[forecast_weather['country'].str.contains("Italy").reset_index()                            
+#     data_gr = forecast_weather[forecast_weather['country'].str.contains("Greece").reset_index()                           
+#     data_au = forecast_weather[forecast_weather['country'].str.contains("Austria").reset_index()                           
+#     data_tu = forecast_weather[forecast_weather['country'].str.contains("Turkey").reset_index()      
+#     data_ro = forecast_weather[forecast_weather['country'].str.contains("Romania").reset_index()                           
+#     data_hu = forecast_weather[forecast_weather['country'].str.contains("Hungary").reset_index()                           
+#     data_bu = forecast_weather[forecast_weather['country'].str.contains("Bulgaria").reset_index()                          
+#     data_cr = forecast_weather[forecast_weather['country'].str.contains("Croatia").reset_index()
                                
-    dropdown = st.selectbox('Select country', ("Netherlands","France", "Germany","Portugal","United Kingdom","Belgium","Denmark","Spain","Ireland","Italy", "Greece","Austria","Turkey","Romania", "Hungary","Bulgaria","Croatia")                          
+#     dropdown = st.selectbox('Select country', ("Netherlands","France", "Germany","Portugal","United Kingdom","Belgium","Denmark","Spain","Ireland","Italy", "Greece","Austria","Turkey","Romania", "Hungary","Bulgaria","Croatia")                          
    
-    sliders = [
-    {'steps':[
-    {'method': 'update', 'label': '2021-11-08 12:00:00', 'args': [{'visible': [True, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-08 15:00:00', 'args': [{'visible': [False, True, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-08 18:00:00', 'args': [{'visible': [False, False, True, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-08 21:00:00', 'args': [{'visible': [False, False, False, True, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-09 00:00:00', 'args': [{'visible': [False, False, False, False, True, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-09 03:00:00', 'args': [{'visible': [False, False, False, False, False, True, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-09 06:00:00', 'args': [{'visible': [False, False, False, False, False, False, True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-09 09:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-09 12:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-09 15:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-09 18:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-09 21:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-10 00:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-10 03:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-10 06:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-10 09:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-10 12:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-10 15:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-10 18:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-10 21:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-11 00:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-11 03:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-11 06:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-11 09:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-11 12:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-11 15:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-11 18:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-11 21:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-12 00:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-12 03:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-12 06:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-12 09:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-12 12:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-12 15:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-12 18:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-12 21:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-13 00:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False]}]},
-    {'method': 'update', 'label': '2021-11-13 03:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False]}]},
-    {'method': 'update', 'label': '2021-11-13 06:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False]}]},
-    {'method': 'update', 'label': '2021-11-13 09:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True]}]}
-    ]}]
+#     sliders = [
+#     {'steps':[
+#     {'method': 'update', 'label': '2021-11-08 12:00:00', 'args': [{'visible': [True, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-08 15:00:00', 'args': [{'visible': [False, True, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-08 18:00:00', 'args': [{'visible': [False, False, True, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-08 21:00:00', 'args': [{'visible': [False, False, False, True, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-09 00:00:00', 'args': [{'visible': [False, False, False, False, True, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-09 03:00:00', 'args': [{'visible': [False, False, False, False, False, True, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-09 06:00:00', 'args': [{'visible': [False, False, False, False, False, False, True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-09 09:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-09 12:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-09 15:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-09 18:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-09 21:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-10 00:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-10 03:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-10 06:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-10 09:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-10 12:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-10 15:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-10 18:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-10 21:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-11 00:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-11 03:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-11 06:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-11 09:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-11 12:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-11 15:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-11 18:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-11 21:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-12 00:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-12 03:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-12 06:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-12 09:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-12 12:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-12 15:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-12 18:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-12 21:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-13 00:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-13 03:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False]}]},
+#     {'method': 'update', 'label': '2021-11-13 06:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False]}]},
+#     {'method': 'update', 'label': '2021-11-13 09:00:00', 'args': [{'visible': [False, False, False, False, False, False, False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True]}]}
+#     ]}]
         
         
         
     
                        
                             
-    if dropdown=="Netherlands" :
-        fignl = px.bar(data_nl, x="City", y="temp_c") 
-        fignl.update_layout({'sliders': sliders})      
-        st.plotly_chart(fignl)
-    if dropdown=="France" :
-        figfr = px.bar(data_fr, x="City", y="temp_c") 
-        figfr.update_layout({'sliders': sliders})      
-        st.plotly_chart(figfr)                        
-    if dropdown=="Germany" :
-        figge = px.bar(data_ge, x="City", y="temp_c") 
-        figge.update_layout({'sliders': sliders})      
-        st.plotly_chart(figge)                       
-    if dropdown=="Portugal" :
-        figpt = px.bar(data_nl, x="City", y="temp_c") 
-        figpt.update_layout({'sliders': sliders})      
-        st.plotly_chart(figpt)                            
-    if dropdown=="United Kingdom" :
-        figuk = px.bar(data_uk, x="City", y="temp_c") 
-        figuk.update_layout({'sliders': sliders})      
-        st.plotly_chart(figuk)                            
-    if dropdown=="Belgium" :
-        figbe = px.bar(data_be, x="City", y="temp_c") 
-        figbe.update_layout({'sliders': sliders})      
-        st.plotly_chart(figbe)                          
-    if dropdown=="Denmark" :
-        figdk = px.bar(data_dk, x="City", y="temp_c") 
-        figdk.update_layout({'sliders': sliders})      
-        st.plotly_chart(figdk)                           
-    if dropdown=="Spain" :
-        figes = px.bar(data_es, x="City", y="temp_c") 
-        figes.update_layout({'sliders': sliders})      
-        st.plotly_chart(figes)                            
-    if dropdown=="Ireland" :
-        figie = px.bar(data_ie, x="City", y="temp_c") 
-        figie.update_layout({'sliders': sliders})      
-        st.plotly_chart(figie)                            
-    if dropdown=="Italy" :
-        figit = px.bar(data_it, x="City", y="temp_c") 
-        figit.update_layout({'sliders': sliders})      
-        st.plotly_chart(figit)                           
-    if dropdown=="Greece" :
-        figgr = px.bar(data_gr, x="City", y="temp_c") 
-        figgr.update_layout({'sliders': sliders})      
-        st.plotly_chart(figgr)                            
-    if dropdown=="Austria" : 
-        figau = px.bar(data_au, x="City", y="temp_c") 
-        figau.update_layout({'sliders': sliders})      
-        st.plotly_chart(figau)                            
-    if dropdown=="Turkey" :
-        figtu = px.bar(data_tu, x="City", y="temp_c") 
-        figtu.update_layout({'sliders': sliders})      
-        st.plotly_chart(figtu)                            
-    if dropdown=="Romania" :
-        figro = px.bar(data_ro, x="City", y="temp_c") 
-        figro.update_layout({'sliders': sliders})      
-        st.plotly_chart(figro)                            
-    if dropdown=="Hungary" :
-        fighu = px.bar(data_hu, x="City", y="temp_c") 
-        fighu.update_layout({'sliders': sliders})      
-        st.plotly_chart(fighu)                            
-    if dropdown=="Bulgaria" :
-        figbu = px.bar(data_bu, x="City", y="temp_c") 
-        figbu.update_layout({'sliders': sliders})      
-        st.plotly_chart(figbu)                         
-    if dropdown=="Croatia" :  
-        figcr = px.bar(data_cr, x="City", y="temp_c") 
-        figcr.update_layout({'sliders': sliders})      
-        st.plotly_chart(figcr)                        
+#     if dropdown=="Netherlands" :
+#         fignl = px.bar(data_nl, x="City", y="temp_c") 
+#         fignl.update_layout({'sliders': sliders})      
+#         st.plotly_chart(fignl)
+#     if dropdown=="France" :
+#         figfr = px.bar(data_fr, x="City", y="temp_c") 
+#         figfr.update_layout({'sliders': sliders})      
+#         st.plotly_chart(figfr)                        
+#     if dropdown=="Germany" :
+#         figge = px.bar(data_ge, x="City", y="temp_c") 
+#         figge.update_layout({'sliders': sliders})      
+#         st.plotly_chart(figge)                       
+#     if dropdown=="Portugal" :
+#         figpt = px.bar(data_nl, x="City", y="temp_c") 
+#         figpt.update_layout({'sliders': sliders})      
+#         st.plotly_chart(figpt)                            
+#     if dropdown=="United Kingdom" :
+#         figuk = px.bar(data_uk, x="City", y="temp_c") 
+#         figuk.update_layout({'sliders': sliders})      
+#         st.plotly_chart(figuk)                            
+#     if dropdown=="Belgium" :
+#         figbe = px.bar(data_be, x="City", y="temp_c") 
+#         figbe.update_layout({'sliders': sliders})      
+#         st.plotly_chart(figbe)                          
+#     if dropdown=="Denmark" :
+#         figdk = px.bar(data_dk, x="City", y="temp_c") 
+#         figdk.update_layout({'sliders': sliders})      
+#         st.plotly_chart(figdk)                           
+#     if dropdown=="Spain" :
+#         figes = px.bar(data_es, x="City", y="temp_c") 
+#         figes.update_layout({'sliders': sliders})      
+#         st.plotly_chart(figes)                            
+#     if dropdown=="Ireland" :
+#         figie = px.bar(data_ie, x="City", y="temp_c") 
+#         figie.update_layout({'sliders': sliders})      
+#         st.plotly_chart(figie)                            
+#     if dropdown=="Italy" :
+#         figit = px.bar(data_it, x="City", y="temp_c") 
+#         figit.update_layout({'sliders': sliders})      
+#         st.plotly_chart(figit)                           
+#     if dropdown=="Greece" :
+#         figgr = px.bar(data_gr, x="City", y="temp_c") 
+#         figgr.update_layout({'sliders': sliders})      
+#         st.plotly_chart(figgr)                            
+#     if dropdown=="Austria" : 
+#         figau = px.bar(data_au, x="City", y="temp_c") 
+#         figau.update_layout({'sliders': sliders})      
+#         st.plotly_chart(figau)                            
+#     if dropdown=="Turkey" :
+#         figtu = px.bar(data_tu, x="City", y="temp_c") 
+#         figtu.update_layout({'sliders': sliders})      
+#         st.plotly_chart(figtu)                            
+#     if dropdown=="Romania" :
+#         figro = px.bar(data_ro, x="City", y="temp_c") 
+#         figro.update_layout({'sliders': sliders})      
+#         st.plotly_chart(figro)                            
+#     if dropdown=="Hungary" :
+#         fighu = px.bar(data_hu, x="City", y="temp_c") 
+#         fighu.update_layout({'sliders': sliders})      
+#         st.plotly_chart(fighu)                            
+#     if dropdown=="Bulgaria" :
+#         figbu = px.bar(data_bu, x="City", y="temp_c") 
+#         figbu.update_layout({'sliders': sliders})      
+#         st.plotly_chart(figbu)                         
+#     if dropdown=="Croatia" :  
+#         figcr = px.bar(data_cr, x="City", y="temp_c") 
+#         figcr.update_layout({'sliders': sliders})      
+#         st.plotly_chart(figcr)                        
                               
