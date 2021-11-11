@@ -917,7 +917,7 @@ if rad == 'Plotting forecast weather':
         figpt = go.Figure()
         for x in list(data_pt['dt_txt'].unique()):
             df14 = data_pt[data_pt['dt_txt'] == x]
-            figpt.add_trace(go.Bar(x=df14['name'], y=df14['temp_c'])
+            figpt.add_trace(go.Bar(x=df14['name'], y=df14['temp_c'], name=x))
         figpt.update_layout({'sliders': sliders}) 
         figpt.update_xaxes(fixedrange=True)
         figpt.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)",color='name')
