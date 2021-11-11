@@ -890,7 +890,7 @@ if rad == 'Plotting forecast weather':
         fignl = go.Figure()
         for x in list(data_nl['dt_txt'].unique()):
             df11 = data_nl[data_nl['dt_txt'] == x]
-            fignl.add_trace(go.Bar(x=df11['name'], y=df11['temp_c'], name=x))
+            fignl.add_trace(go.Bar(x=df11['name'], y=df11['temp_c'], name=x),title='Barplot of the temperature per city',yaxis_title="Temperature (°C)")
         fignl.update_layout({'sliders': sliders})  
         #fig.update_layout(xaxis_range=[["Amsterdam", "Provincie Utrecht","Rotterdam","Middelburg","Gemeente Eindhoven","Maastricht","Gemeente Arnhem","Zwolle","Lelystad","Assen","Province of Groningen","Leeuwarden"]])
         fignl.update_xaxes(fixedrange=True)
@@ -899,7 +899,7 @@ if rad == 'Plotting forecast weather':
         figfr = go.Figure()
         for x in list(data_fr['dt_txt'].unique()):
             df12 = data_fr[data_fr['dt_txt'] == x]
-            figfr.add_trace(go.Bar(x=df12['name'], y=df12['temp_c'], name=x))
+            figfr.add_trace(go.Bar(x=df12['name'], y=df12['temp_c'], name=x),title='Barplot of the temperature per city',yaxis_title="Temperature (°C)")
         figfr.update_layout({'sliders': sliders})  
         figfr.update_xaxes(fixedrange=True)
         st.plotly_chart(figfr)                        
@@ -907,7 +907,7 @@ if rad == 'Plotting forecast weather':
         figge = go.Figure()
         for x in list(data_ge['dt_txt'].unique()):
             df13 = data_ge[data_ge['dt_txt'] == x]
-            figge.add_trace(go.Bar(x=df13['name'], y=df13['temp_c'], name=x))
+            figge.add_trace(go.Bar(x=df13['name'], y=df13['temp_c'], name=x),title='Barplot of the temperature per city',yaxis_title="Temperature (°C)")
         figge.update_layout({'sliders': sliders})    
         figge.update_xaxes(fixedrange=True)
         st.plotly_chart(figge)                       
@@ -915,7 +915,7 @@ if rad == 'Plotting forecast weather':
         figpt = go.Figure()
         for x in list(data_pt['dt_txt'].unique()):
             df14 = data_pt[data_pt['dt_txt'] == x]
-            figpt.add_trace(go.Bar(x=df14['name'], y=df14['temp_c'], name=x))
+            figpt.add_trace(go.Bar(x=df14['name'], y=df14['temp_c'], name=x),title='Barplot of the temperature per city')
         figpt.update_layout({'sliders': sliders}) 
         figpt.update_xaxes(fixedrange=True)
         st.plotly_chart(figpt)                            
@@ -923,7 +923,7 @@ if rad == 'Plotting forecast weather':
         figuk = go.Figure()
         for x in list(data_uk['dt_txt'].unique()):
             df15 = data_uk[data_uk['dt_txt'] == x]
-            figuk.add_trace(go.Bar(x=df15['name'], y=df15['temp_c'], name=x))
+            figuk.add_trace(go.Bar(x=df15['name'], y=df15['temp_c'], name=x),title='Barplot of the temperature per city',yaxis_title="Temperature (°C)")
         figuk.update_layout({'sliders': sliders})  
         figuk.update_xaxes(fixedrange=True)
         st.plotly_chart(figuk)                            
@@ -931,7 +931,7 @@ if rad == 'Plotting forecast weather':
         figbe = go.Figure()
         for x in list(data_be['dt_txt'].unique()):
             df16 = data_be[data_be['dt_txt'] == x]
-            figbe.add_trace(go.Bar(x=df16['name'], y=df16['temp_c'], name=x))
+            figbe.add_trace(go.Bar(x=df16['name'], y=df16['temp_c'], name=x),title='Barplot of the temperature per city',yaxis_title="Temperature (°C)")
         figbe.update_layout({'sliders': sliders})   
         fig.update_xaxes(fixedrange=True)
         st.plotly_chart(figbe)                          
@@ -939,7 +939,7 @@ if rad == 'Plotting forecast weather':
         figdk = go.Figure()
         for x in list(data_dk['dt_txt'].unique()):
             df17 = data_dk[data_dk['dt_txt'] == x]
-            figdk.add_trace(go.Bar(x=df17['name'], y=df17['temp_c'], name=x))
+            figdk.add_trace(go.Bar(x=df17['name'], y=df17['temp_c'], name=x),title='Barplot of the temperature per city',yaxis_title="Temperature (°C)")
         figdk.update_layout({'sliders': sliders})  
         figdk.update_xaxes(fixedrange=True)
         st.plotly_chart(figdk)                           
@@ -947,7 +947,7 @@ if rad == 'Plotting forecast weather':
         figes = go.Figure()
         for x in list(data_es['dt_txt'].unique()):
             df18 = data_es[data_es['dt_txt'] == x]
-            figes.add_trace(go.Bar(x=df18['name'], y=df18['temp_c'], name=x))
+            figes.add_trace(go.Bar(x=df18['name'], y=df18['temp_c'], name=x),title='Barplot of the temperature per city',yaxis_title="Temperature (°C)")
         figes.update_layout({'sliders': sliders}) 
         figes.update_xaxes(fixedrange=True)
         st.plotly_chart(figes)                            
@@ -955,7 +955,7 @@ if rad == 'Plotting forecast weather':
         figie= go.Figure()
         for x in list(data_ie['dt_txt'].unique()):
             df19 = data_ie[data_ie['dt_txt'] == x]
-            figie.add_trace(go.Bar(x=df19['name'], y=df19['temp_c'], name=x))
+            figie.add_trace(go.Bar(x=df19['name'], y=df19['temp_c'], name=x),title='Barplot of the temperature per city',yaxis_title="Temperature (°C)")
         figie.update_layout({'sliders': sliders}) 
         figie.update_xaxes(fixedrange=True)
         st.plotly_chart(figie)                            
@@ -963,7 +963,7 @@ if rad == 'Plotting forecast weather':
         figit = go.Figure()
         for x in list(data_it['dt_txt'].unique()):
             df20 = data_it[data_it['dt_txt'] == x]
-            figit.add_trace(go.Bar(x=df20['name'], y=df20['temp_c'], name=x))
+            figit.add_trace(go.Bar(x=df20['name'], y=df20['temp_c'], name=x),title='Barplot of the temperature per city',yaxis_title="Temperature (°C)")
         figit.update_layout({'sliders': sliders}) 
         figit.update_xaxes(fixedrange=True)
         st.plotly_chart(figit)                           
@@ -971,7 +971,7 @@ if rad == 'Plotting forecast weather':
         figgr = go.Figure()
         for x in list(data_gr['dt_txt'].unique()):
             df21 = data_gr[data_gr['dt_txt'] == x]
-            figgr.add_trace(go.Bar(x=df21['name'], y=df21['temp_c'], name=x))
+            figgr.add_trace(go.Bar(x=df21['name'], y=df21['temp_c'], name=x),title='Barplot of the temperature per city',yaxis_title="Temperature (°C)")
         figgr.update_layout({'sliders': sliders})  
         figgr.update_xaxes(fixedrange=True)
         st.plotly_chart(figgr)                            
@@ -979,7 +979,7 @@ if rad == 'Plotting forecast weather':
         figau = go.Figure()
         for x in list(data_au['dt_txt'].unique()):
             df22 = data_au[data_au['dt_txt'] == x]
-            figau.add_trace(go.Bar(x=df22['name'], y=df22['temp_c'], name=x))
+            figau.add_trace(go.Bar(x=df22['name'], y=df22['temp_c'], name=x),title='Barplot of the temperature per city',yaxis_title="Temperature (°C)")
         figau.update_layout({'sliders': sliders})      
         figau.update_xaxes(fixedrange=True)
         st.plotly_chart(figau)                            
@@ -987,7 +987,7 @@ if rad == 'Plotting forecast weather':
         figtu = go.Figure()
         for x in list(data_tu['dt_txt'].unique()):
             df23 = data_tu[data_tu['dt_txt'] == x]
-            figtu.add_trace(go.Bar(x=df23['name'], y=df23['temp_c'], name=x))
+            figtu.add_trace(go.Bar(x=df23['name'], y=df23['temp_c'], name=x),title='Barplot of the temperature per city',yaxis_title="Temperature (°C)")
         figtu.update_layout({'sliders': sliders})   
         figtu.update_xaxes(fixedrange=True)
         st.plotly_chart(figtu)                            
@@ -995,7 +995,7 @@ if rad == 'Plotting forecast weather':
         figro = go.Figure()
         for x in list(data_ro['dt_txt'].unique()):
             df24 = data_ro[data_ro['dt_txt'] == x]
-            figro.add_trace(go.Bar(x=df24['name'], y=df24['temp_c'], name=x))
+            figro.add_trace(go.Bar(x=df24['name'], y=df24['temp_c'], name=x),title='Barplot of the temperature per city',yaxis_title="Temperature (°C)")
         figro.update_layout({'sliders': sliders})  
         figro.update_xaxes(fixedrange=True)
         st.plotly_chart(figro)                            
@@ -1003,7 +1003,7 @@ if rad == 'Plotting forecast weather':
         fighu = go.Figure()
         for x in list(data_hu['dt_txt'].unique()):
             df25 = data_hu[data_hu['dt_txt'] == x]
-            fighu.add_trace(go.Bar(x=df25['name'], y=df25['temp_c'], name=x))
+            fighu.add_trace(go.Bar(x=df25['name'], y=df25['temp_c'], name=x),title='Barplot of the temperature per city',yaxis_title="Temperature (°C)")
         fighu.update_layout({'sliders': sliders}) 
         fighu.update_xaxes(fixedrange=True)
         st.plotly_chart(fighu)                            
@@ -1012,7 +1012,7 @@ if rad == 'Plotting forecast weather':
         figcr = go.Figure()
         for x in list(data_cr['dt_txt'].unique()):
             df27 = data_cr[data_cr['dt_txt'] == x]
-            figcr.add_trace(go.Bar(x=df27['name'], y=df27['temp_c'], name=x))
+            figcr.add_trace(go.Bar(x=df27['name'], y=df27['temp_c'], name=x),title='Barplot of the temperature per city',yaxis_title="Temperature (°C)")
         figcr.update_layout({'sliders': sliders}) 
         figct.update_xaxes(fixedrange=True)
         st.plotly_chart(figcr)                        
