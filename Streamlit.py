@@ -38,9 +38,6 @@ if rad== 'Home':
     st.markdown('#')
     st.markdown('#')
     st.markdown('#')
-    st.markdown('#')
-    st.markdown('#')
-    st.markdown('#')
     st.subheader('Bibliography')
     '- Max Vandaag. (2021, 20 maart). [Hoge en lage drukgebieden]. Het weer: het maken van een weersverwachting. https://www.maxvandaag.nl/sessies/themas/natuur-milieu/het-maken-van-een-weersverwachting/'
     '- API'
@@ -114,6 +111,7 @@ if rad == 'Plotting current weather':
     ##############################################################################################################
     st.markdown('#')
     st.subheader('Correlation for each variable')
+    st.markdown('#')
     img2 = Image.open("corr.png")
     st.image(img2, width=800)
 
@@ -810,7 +808,7 @@ if rad == 'Plotting forecast weather':
     'NOG EEN TEKST'
     st.markdown('#')
   
-    'The figure below shows the map of the weather on 6 november 2021. With the layer control you can select the information of your choice.'
+    
     
 #     data_nl = forecast_weather[forecast_weather['country'].str.contains("Netherlands").reset_index()
 #     data_fr = forecast_weather[forecast_weather['country'].str.contains("France").reset_index()
