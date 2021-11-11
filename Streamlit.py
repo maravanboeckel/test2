@@ -114,7 +114,7 @@ if rad == 'Plotting current weather':
     st.markdown('#')
     st.subheader('Correlation for each variable')
     st.markdown('#')
-    img2 = Image.open("corr.png")
+    img2 = Image.open("corr2.png")
     st.image(img2, width=800)
 
 # In[ ]:
