@@ -103,7 +103,7 @@ if rad == 'Plotting current weather':
     
     
     fig4=px.scatter(current_weather,x="temp_diff",y="speed",color='country',color_discrete_map =city_color_map,trendline="ols",trendline_color_override="grey",trendline_scope='overall',title='nog bedenken',labels={'temp_diff':'Tempeture difference','speed':'Windspeed (km/h)'})
-    fig4.show()
+    st.plotly_chart(fig4)
     img1 = Image.open("summary speed.png")
     st.image(img1, width=800)
     
