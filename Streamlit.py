@@ -903,7 +903,7 @@ if rad == 'Plotting forecast weather':
             figfr.add_trace(go.Bar(x=df12['name'], y=df12['temp_c'], name=x))
         figfr.update_layout({'sliders': sliders})  
         figfr.update_layout(yaxis_range=[0,20])
-        figfr.update_xaxes(categoryarray=[]
+        #figfr.update_xaxes(categoryarray=[]
         figfr.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
         st.plotly_chart(figfr)                        
     if dropdown=="Germany" :
