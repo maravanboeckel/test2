@@ -971,7 +971,7 @@ if rad == 'Plotting forecast weather':
         figit = go.Figure()
         for x in list(data_it['dt_txt'].unique()):
             df20 = data_it[data_it['dt_txt'] == x]
-            figit.add_trace(go.Bar(x=df20['name'], y=df20['temp_c'], name=x),title='Barplot of the temperature per city',yaxis_title="Temperature (°C)")
+            figit.add_trace(go.Bar(x=df20['name'], y=df20['temp_c'], name=x))
         figit.update_layout({'sliders': sliders}) 
         figit.update_xaxes(fixedrange=True)
         figit.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)",color='name')
@@ -989,7 +989,7 @@ if rad == 'Plotting forecast weather':
         figau = go.Figure()
         for x in list(data_au['dt_txt'].unique()):
             df22 = data_au[data_au['dt_txt'] == x]
-            figau.add_trace(go.Bar(x=df22['name'], y=df22['temp_c'])
+            figau.add_trace(go.Bar(x=df22['name'], y=df22['temp_c'], name=x))
         figau.update_layout({'sliders': sliders})      
         figau.update_xaxes(fixedrange=True)
         figau.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)",color='name')
