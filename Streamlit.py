@@ -834,7 +834,7 @@ if rad == 'Plotting forecast weather':
     data_bu = forecast_weather[forecast_weather['country'].str.contains("Bulgaria")].reset_index()                          
     data_cr = forecast_weather[forecast_weather['country'].str.contains("Croatia")].reset_index()
                                
-    dropdown = st.selectbox('Select country', ("Netherlands","France", "Germany","Portugal","United Kingdom","Belgium","Denmark","Spain","Ireland","Italy", "Greece","Austria","Turkey","Romania", "Hungary","Bulgaria","Croatia")                          
+    dropdown = st.selectbox('Select country', ("Netherlands","France", "Germany","Portugal","United Kingdom","Belgium","Denmark","Spain","Ireland","Italy", "Greece","Austria","Turkey","Romania", "Hungary","Bulgaria","Croatia"))                          
    
     sliders = [
     {'steps':[
