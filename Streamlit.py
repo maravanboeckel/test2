@@ -295,7 +295,7 @@ if rad == 'Forecast weather map':
         effecten[2].add_to(map)
 
 
-    for row in forecast_weather.iloc[start*3:start*4].iterrows()
+    for row in forecast_weather.iloc[start*3:start*4].iterrows():
         row_values=row[1]
         popup = ('<strong>' + row_values['name'] + '</strong>' + '<br>'+
                     'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
