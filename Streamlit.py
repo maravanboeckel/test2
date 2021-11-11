@@ -221,7 +221,7 @@ if rad == 'Current weather map':
     folium_static(current_weather_map)
     
     imglegend = Image.open("legenda2.png")
-    st.image(imglegend, width=800)
+    st.image(imglegend)
     
   
 
