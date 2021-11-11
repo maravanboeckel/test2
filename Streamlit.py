@@ -894,6 +894,7 @@ if rad == 'Plotting forecast weather':
         fignl.update_layout({'sliders': sliders}) 
         fignl.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)",margin_autoexpand=True)
         fignl.update_layout(yaxis_range=[0,17])
+        fignl.update_xaxes(categoryarray=["Amsterdam", "Provincie Utrecht","Rotterdam","Middelburg"," Gemeente Eindhoven","Maastricht","Gemeente Arnhem","Zwolle","Lelystad","Assen","Province of Groningen","Leeuwarden"])
         st.plotly_chart(fignl,use_container_width=True)
     if dropdown=="France" :
         figfr = go.Figure()
