@@ -890,9 +890,9 @@ if rad == 'Plotting forecast weather':
         fignl.update_layout({'sliders': sliders})      
         st.plotly_chart(fignl)
     if dropdown=="France" :
-        #figfr = px.bar(data_fr, x="City", y="temp_c") 
-        #figfr.update_layout({'sliders': sliders})      
-        #st.plotly_chart(figfr)                        
+        figfr = px.bar(data_fr, x="City", y="temp_c") 
+        figfr.update_layout({'sliders': sliders})      
+        st.plotly_chart(figfr)                        
     if dropdown=="Germany" :
         figge = px.bar(data_ge, x="City", y="temp_c") 
         figge.update_layout({'sliders': sliders})      
