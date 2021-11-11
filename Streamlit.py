@@ -51,7 +51,7 @@ if rad == 'Plotting current weather':
     current_weather = pd.read_csv('Weather_compleet.csv')
     
     city_color_map = {'Netherlands': 'rgb(240,128,128)','United Kingdom': 'rgb(135,206,235)','France': 'rgb(216, 191,216)',
-                      'Belgium': 'rgb(127,255,212)','Denmark': 'rgb(238,106,80)','Portugal': 'rgb(205,41,144)',
+                      'Belgium': 'rgb(127,255,212)','Denmark': 'rgb(255,211,155)','Portugal': 'rgb(205,41,144)',
                       'Germany' : 'rgb(255,246,143)','Spain':'rgb(162,205,90)','Ireland':'rgb(205,200,177)',
                       'Italy':'rgb(255,99,71)','Greece':'rgb(0,238,118)','Croatia':'rgb(99,184,255)',
                       'Austria':'rgb(198,113,113)','Turkey':'rgb(135,38,87)','Romania':'rgb(255,130,171)',
