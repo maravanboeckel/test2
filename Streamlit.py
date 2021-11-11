@@ -1024,7 +1024,7 @@ if rad == 'Plotting forecast weather':
             figro.add_trace(go.Bar(x=df24['name'], y=df24['temp_c'], name=x))
         figro.update_layout({'sliders': sliders})  
         figro.update_layout(yaxis_range=[0,20])
-        figro.update_xaxes(categoryarray=['Bucharest','Cluj-Napoca','Tulcea','Brasov','Iasi','Timișoara','Constanța]) 
+        figro.update_xaxes(categoryarray=['Bucharest','Cluj-Napoca','Tulcea','Brasov','Iasi','Timișoara','Constanța']) 
         figro.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
         st.plotly_chart(figro)                            
     if dropdown=="Hungary" :
