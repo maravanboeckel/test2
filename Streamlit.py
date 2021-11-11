@@ -991,7 +991,7 @@ if rad == 'Plotting forecast weather':
             df22 = data_au[data_au['dt_txt'] == x]
             figau.add_trace(go.Bar(x=df22['name'], y=df22['temp_c'], name=x))
         figau.update_layout({'sliders': sliders})      
-        figau..update_layout(yaxis_range=[0,20])
+        figau.update_layout(yaxis_range=[0,20])
         figau.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
         st.plotly_chart(figau)                            
     if dropdown=="Turkey" :
