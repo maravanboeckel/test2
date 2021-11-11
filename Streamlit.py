@@ -818,7 +818,7 @@ if rad == 'Plotting forecast weather':
     
     data_nl = forecast_weather[forecast_weather['country'].str.contains("Netherlands").reset_index()
     #data_fr = forecast_weather[forecast_weather['country'].str.contains("France").reset_index()
-    data_ge = forecast_weather[forecast_weather['country'].str.contains("Germany").reset_index()
+    #data_ge = forecast_weather[forecast_weather['country'].str.contains("Germany").reset_index()
     data_pt = forecast_weather[forecast_weather['country'].str.contains("Portugal").reset_index()
     data_uk = forecast_weather[forecast_weather['country'].str.contains("United Kingdom").reset_index()
     data_be = forecast_weather[forecast_weather['country'].str.contains("Belgium").reset_index()
