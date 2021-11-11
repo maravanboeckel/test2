@@ -155,7 +155,7 @@ if rad == 'Current weather map':
 
 
 
-    data = ['Measurements','Wind','Temperature','Pressure','"feels like" temperature']
+    data = ['Measurements','Wind','Temperature','Pressure','"Feels like" temperature']
 
 
 
@@ -168,12 +168,12 @@ if rad == 'Current weather map':
         row_values=row[1]
         location=[row_values['lat'], row_values['lon']]
         popup = ('<strong>' + row_values['City'] + '</strong>' + '<br>'+
-        'Temperature: '+ str(round(row_values['temp_c'],2)) + '<br>'+
-        'Windspeed: ' + str(round(row_values['speed'],2)) + '<br>' +
-        'Pressure: ' + str(round(row_values['pressure'],2)) + '<br>'+
+        'Temperature: '+ str(round(row_values['temp_c'],2))+ '°C' + '<br>'+
+        'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h'+ '<br>' +
+        'Pressure: ' + str(round(row_values['pressure'],2))+'hPa' + '<br>'+
         'Rain: ' + str(row_values['rain']) + '<br>' +
-        'Sunrise: ' + str(row_values['sunrise'],) + '<br>' +
-        'Sunset: ' + str(row_values['sunset']) + '<br>')
+        'Sunrise: ' + str(row_values['sunrise'],)+ 'UTC' + '<br>' +
+        'Sunset: ' + str(row_values['sunset']) + 'UTC'+ '<br>')
         marker = folium.Marker(location=location,popup=popup,tooltip = tooltip)
         marker.add_to(effecten[0])
         effecten[0].add_to(current_weather_map)
@@ -202,7 +202,7 @@ if rad == 'Current weather map':
     for row in current_weather.iterrows():
         row_values=row[1]
         location=[row_values['lat'], row_values['lon']]
-        marker = folium.CircleMarker(location=location,tooltip = str(round(row_values['feels_like_c'],2)),radius=6,fill=True,opacity=1,color=colorstemp(row_values['feels_like_c']))
+        marker = folium.CircleMarker(location=location,tooltip = str(round(row_values['feels_like_c'],2) '°C'),radius=6,fill=True,opacity=1,color=colorstemp(row_values['feels_like_c']))
         marker.add_to(effecten[4])
         effecten[4].add_to(current_weather_map)
 
