@@ -886,71 +886,71 @@ if rad == 'Plotting forecast weather':
                        
                             
     if dropdown=="Netherlands" :
-        fignl = px.bar(data_nl, x="City", y="temp_c") 
+        fignl = px.bar(data_nl, x="name", y="temp_c") 
         fignl.update_layout({'sliders': sliders})      
         st.plotly_chart(fignl)
     if dropdown=="France" :
-        figfr = px.bar(data_fr, x="City", y="temp_c") 
+        figfr = px.bar(data_fr, x="name", y="temp_c") 
         figfr.update_layout({'sliders': sliders})      
         st.plotly_chart(figfr)                        
     if dropdown=="Germany" :
-        figge = px.bar(data_ge, x="City", y="temp_c") 
+        figge = px.bar(data_ge, x="name", y="temp_c") 
         figge.update_layout({'sliders': sliders})      
         st.plotly_chart(figge)                       
     if dropdown=="Portugal" :
-        figpt = px.bar(data_nl, x="City", y="temp_c") 
+        figpt = px.bar(data_nl, x="name", y="temp_c") 
         figpt.update_layout({'sliders': sliders})      
         st.plotly_chart(figpt)                            
     if dropdown=="United Kingdom" :
-        figuk = px.bar(data_uk, x="City", y="temp_c") 
+        figuk = px.bar(data_uk, x="name", y="temp_c") 
         figuk.update_layout({'sliders': sliders})      
         st.plotly_chart(figuk)                            
     if dropdown=="Belgium" :
-        figbe = px.bar(data_be, x="City", y="temp_c") 
+        figbe = px.bar(data_be, x="name", y="temp_c") 
         figbe.update_layout({'sliders': sliders})      
         st.plotly_chart(figbe)                          
     if dropdown=="Denmark" :
-        figdk = px.bar(data_dk, x="City", y="temp_c") 
+        figdk = px.bar(data_dk, x="name", y="temp_c") 
         figdk.update_layout({'sliders': sliders})      
         st.plotly_chart(figdk)                           
     if dropdown=="Spain" :
-        figes = px.bar(data_es, x="City", y="temp_c") 
+        figes = px.bar(data_es, x="name", y="temp_c") 
         figes.update_layout({'sliders': sliders})      
         st.plotly_chart(figes)                            
     if dropdown=="Ireland" :
-        figie = px.bar(data_ie, x="City", y="temp_c") 
+        figie = px.bar(data_ie, x="name", y="temp_c") 
         figie.update_layout({'sliders': sliders})      
         st.plotly_chart(figie)                            
     if dropdown=="Italy" :
-        figit = px.bar(data_it, x="City", y="temp_c") 
+        figit = px.bar(data_it, x="name", y="temp_c") 
         figit.update_layout({'sliders': sliders})      
         st.plotly_chart(figit)                           
     if dropdown=="Greece" :
-        figgr = px.bar(data_gr, x="City", y="temp_c") 
+        figgr = px.bar(data_gr, x="name", y="temp_c") 
         figgr.update_layout({'sliders': sliders})      
         st.plotly_chart(figgr)                            
     if dropdown=="Austria" : 
-        figau = px.bar(data_au, x="City", y="temp_c") 
+        figau = px.bar(data_au, x="name", y="temp_c") 
         figau.update_layout({'sliders': sliders})      
         st.plotly_chart(figau)                            
     if dropdown=="Turkey" :
-        figtu = px.bar(data_tu, x="City", y="temp_c") 
+        figtu = px.bar(data_tu, x="name", y="temp_c") 
         figtu.update_layout({'sliders': sliders})      
         st.plotly_chart(figtu)                            
     if dropdown=="Romania" :
-        figro = px.bar(data_ro, x="City", y="temp_c") 
+        figro = px.bar(data_ro, x="name", y="temp_c") 
         figro.update_layout({'sliders': sliders})      
         st.plotly_chart(figro)                            
     if dropdown=="Hungary" :
-        fighu = px.bar(data_hu, x="City", y="temp_c") 
+        fighu = px.bar(data_hu, x="name", y="temp_c") 
         fighu.update_layout({'sliders': sliders})      
         st.plotly_chart(fighu)                            
     if dropdown=="Bulgaria" :
-        figbu = px.bar(data_bu, x="City", y="temp_c") 
+        figbu = px.bar(data_bu, x="name", y="temp_c") 
         figbu.update_layout({'sliders': sliders})      
         st.plotly_chart(figbu)                         
     if dropdown=="Croatia" :  
-        figcr = px.bar(data_cr, x="City", y="temp_c") 
+        figcr = px.bar(data_cr, x="name", y="temp_c") 
         figcr.update_layout({'sliders': sliders})      
         st.plotly_chart(figcr)                        
                               
