@@ -892,7 +892,7 @@ if rad == 'Plotting forecast weather':
             df11 = data_nl[data_nl['dt_txt'] == x]
             fignl.add_trace(go.Bar(x=df11['name'], y=df11['temp_c'], name=x))
         fignl.update_layout({'sliders': sliders}) 
-        fignl.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)",color='name',margin_autoexpand=True)
+        fignl.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)",color=df11['name'],margin_autoexpand=True)
         fignl.update_xaxes(fixedrange=True)
         st.plotly_chart(fignl)
     if dropdown=="France" :
