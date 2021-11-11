@@ -12,6 +12,7 @@ from statsmodels.formula.api import ols
 import numpy as np
 import streamlit as st
 from streamlit_folium import folium_static
+import plotly.graph_objects as go
 from PIL import Image
 from folium.plugins import FloatImage
 # In[ ]:
