@@ -894,7 +894,7 @@ if rad == 'Plotting forecast weather':
         fignl.update_layout({'sliders': sliders}) 
         fignl.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)",margin_autoexpand=True)
         fignl.update_layout(yaxis_range=[0,17])
-        st.plotly_chart(fignl)
+        st.plotly_chart(fignl,use_container_width=True)
     if dropdown=="France" :
         figfr = go.Figure()
         for x in list(data_fr['dt_txt'].unique()):
