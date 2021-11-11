@@ -230,8 +230,8 @@ if rad == 'Forecast weather map':
     'The figure below shows the map of the forecast weather from 8 november to 13 november 2021. There is a measuring point every 3 hours. With the layer control you can select the day and time of your choice.'
     forecast_weather = pd.read_csv('forecast_sorted.csv')
     
-    map = folium.Map(location=[52.0893191, 5.1101691], zoom_start = 4)
-
+    #map = folium.Map(location=[52.0893191, 5.1101691], zoom_start = 4)
+    map = folium.Map(location=[45.07033935, 7.686864], zoom_start = 4)
 
 
     data =['11-08 12h', '11-08 15h',
