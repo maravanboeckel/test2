@@ -892,7 +892,7 @@ if rad == 'Plotting forecast weather':
             df11 = data_nl[data_nl['dt_txt'] == x]
             fignl.add_trace(go.Bar(x=df11['name'], y=df11['temp_c'], name=x))
         fignl.update_layout({'sliders': sliders})  
-        fig.update_layout(xaxis_range=[["Amsterdam", "Provincie Utrecht","Rotterdam","Middelburg","Gemeente Eindhoven","Maastricht","Gemeente Arnhem","Zwolle","Lelystad","Assen","Province of Groningen","Leeuwarden"]])
+        #fig.update_layout(xaxis_range=[["Amsterdam", "Provincie Utrecht","Rotterdam","Middelburg","Gemeente Eindhoven","Maastricht","Gemeente Arnhem","Zwolle","Lelystad","Assen","Province of Groningen","Leeuwarden"]])
         fignl.update_xaxes(fixedrange=True)
         st.plotly_chart(fignl)
     if dropdown=="France" :
@@ -1007,14 +1007,7 @@ if rad == 'Plotting forecast weather':
         fighu.update_layout({'sliders': sliders}) 
         fighu.update_xaxes(fixedrange=True)
         st.plotly_chart(fighu)                            
-    if dropdown=="Bulgaria" :
-        figbu = go.Figure()
-        for x in list(data_bu['dt_txt'].unique()):
-            d26 = data_bu[data_bu['dt_txt'] == x]
-            figbu.add_trace(go.Bar(x=df26['name'], y=df26['temp_c'], name=x))
-        figbu.update_layout({'sliders': sliders})
-        figbu.update_xaxes(fixedrange=True)
-        st.plotly_chart(figbu)                         
+                         
     if dropdown=="Croatia" :  
         figcr = go.Figure()
         for x in list(data_cr['dt_txt'].unique()):
