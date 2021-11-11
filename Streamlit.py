@@ -929,7 +929,7 @@ if rad == 'Plotting forecast weather':
             figuk.add_trace(go.Bar(x=df15['name'], y=df15['temp_c'], name=x))
         figuk.update_layout({'sliders': sliders})  
         figuk.update_xaxes(fixedrange=True)
-        figuk.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)",color='name')
+        figuk.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
         st.plotly_chart(figuk)                            
     if dropdown=="Belgium" :
         figbe = go.Figure()
@@ -938,7 +938,7 @@ if rad == 'Plotting forecast weather':
             figbe.add_trace(go.Bar(x=df16['name'], y=df16['temp_c'], name=x))
         figbe.update_layout({'sliders': sliders})   
         figbe.update_xaxes(fixedrange=True)
-        figbe.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)",color='name')
+        figbe.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
         st.plotly_chart(figbe)                          
     if dropdown=="Denmark" :
         figdk = go.Figure()
@@ -947,7 +947,7 @@ if rad == 'Plotting forecast weather':
             figdk.add_trace(go.Bar(x=df17['name'], y=df17['temp_c'], name=x))
         figdk.update_layout({'sliders': sliders})  
         figdk.update_xaxes(fixedrange=True)
-        figdk.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)",color='name')
+        figdk.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
         st.plotly_chart(figdk)                           
     if dropdown=="Spain" :
         figes = go.Figure()
@@ -956,7 +956,7 @@ if rad == 'Plotting forecast weather':
             figes.add_trace(go.Bar(x=df18['name'], y=df18['temp_c'], name=x))
         figes.update_layout({'sliders': sliders}) 
         figes.update_xaxes(fixedrange=True)
-        figes.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)",color='name')
+        figes.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
         st.plotly_chart(figes)                            
     if dropdown=="Ireland" :
         figie= go.Figure()
@@ -965,7 +965,7 @@ if rad == 'Plotting forecast weather':
             figie.add_trace(go.Bar(x=df19['name'], y=df19['temp_c'], name=x))
         figie.update_layout({'sliders': sliders}) 
         figie.update_xaxes(fixedrange=True)
-        figie.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)",color='name')
+        figie.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
         st.plotly_chart(figie)                            
     if dropdown=="Italy" :
         figit = go.Figure()
@@ -974,7 +974,7 @@ if rad == 'Plotting forecast weather':
             figit.add_trace(go.Bar(x=df20['name'], y=df20['temp_c'], name=x))
         figit.update_layout({'sliders': sliders}) 
         figit.update_xaxes(fixedrange=True)
-        figit.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)",color='name')
+        figit.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
         st.plotly_chart(figit)                           
     if dropdown=="Greece" :
         figgr = go.Figure()
@@ -983,7 +983,7 @@ if rad == 'Plotting forecast weather':
             figgr.add_trace(go.Bar(x=df21['name'], y=df21['temp_c'], name=x))
         figgr.update_layout({'sliders': sliders})  
         figgr.update_xaxes(fixedrange=True)
-        figgr.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)",color='name')
+        figgr.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
         st.plotly_chart(figgr)                            
     if dropdown=="Austria" : 
         figau = go.Figure()
@@ -992,7 +992,7 @@ if rad == 'Plotting forecast weather':
             figau.add_trace(go.Bar(x=df22['name'], y=df22['temp_c'], name=x))
         figau.update_layout({'sliders': sliders})      
         figau.update_xaxes(fixedrange=True)
-        figau.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)",color='name')
+        figau.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
         st.plotly_chart(figau)                            
     if dropdown=="Turkey" :
         figtu = go.Figure()
@@ -1001,7 +1001,7 @@ if rad == 'Plotting forecast weather':
             figtu.add_trace(go.Bar(x=df23['name'], y=df23['temp_c'], name=x))
         figtu.update_layout({'sliders': sliders})   
         figtu.update_xaxes(fixedrange=True)
-        figtu.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)",color='name')
+        figtu.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
         st.plotly_chart(figtu)                            
     if dropdown=="Romania" :
         figro = go.Figure()
@@ -1010,7 +1010,7 @@ if rad == 'Plotting forecast weather':
             figro.add_trace(go.Bar(x=df24['name'], y=df24['temp_c'], name=x))
         figro.update_layout({'sliders': sliders})  
         figro.update_xaxes(fixedrange=True)
-        figro.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)",color='name')
+        figro.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
         st.plotly_chart(figro)                            
     if dropdown=="Hungary" :
         fighu = go.Figure()
@@ -1019,7 +1019,7 @@ if rad == 'Plotting forecast weather':
             fighu.add_trace(go.Bar(x=df25['name'], y=df25['temp_c'], name=x))
         fighu.update_layout({'sliders': sliders}) 
         fighu.update_xaxes(fixedrange=True)
-        fighu.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)",color='name')
+        fighu.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
         st.plotly_chart(fighu)                            
                          
     if dropdown=="Croatia" :  
@@ -1029,6 +1029,6 @@ if rad == 'Plotting forecast weather':
             figcr.add_trace(go.Bar(x=df27['name'], y=df27['temp_c'], name=x))
         figcr.update_layout({'sliders': sliders}) 
         figct.update_xaxes(fixedrange=True)
-        figct.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)",color='name')
+        figct.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
         st.plotly_chart(figcr)                        
                               
