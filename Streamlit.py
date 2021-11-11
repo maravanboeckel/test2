@@ -911,7 +911,7 @@ if rad == 'Plotting forecast weather':
             figge.add_trace(go.Bar(x=df13['name'], y=df13['temp_c'], name=x))
         figge.update_layout({'sliders': sliders})    
         figge.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
-        figge.update_layout(yaxis_range=[0,20])
+        figge.update_layout(yaxis_range=[0,15])
         st.plotly_chart(figge)                       
     if dropdown=="Portugal" :
         figpt = go.Figure()
@@ -919,8 +919,8 @@ if rad == 'Plotting forecast weather':
             df14 = data_pt[data_pt['dt_txt'] == x]
             figpt.add_trace(go.Bar(x=df14['name'], y=df14['temp_c'], name=x))
         figpt.update_layout({'sliders': sliders}) 
-        figpt.update_xaxes(fixedrange=True)
-        figpt.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)",color='name')
+        .update_layout(yaxis_range=[0,25])
+        figpt.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
         st.plotly_chart(figpt)                            
     if dropdown=="United Kingdom" :
         figuk = go.Figure()
