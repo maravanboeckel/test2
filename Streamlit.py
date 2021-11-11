@@ -23,7 +23,7 @@ rad = st.sidebar.radio(options=('Home','Current weather map','Plotting current w
 st.sidebar.markdown('#')
 st.sidebar.markdown('#')
 
-st.sidebar.subheader(Made by:')
+st.sidebar.subheader('Made by:')
 st.sidebar.write('Mara van Boeckel')
 st.sidebar.write('Maarten van der Veer')
 
