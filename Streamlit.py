@@ -106,7 +106,7 @@ if rad == 'Plotting current weather':
     ##############################################################################################################
     st.markdown('#')
     
-    fig4=px.scatter(current_weather,x='temp_diff',y='speed',color='country',color_discrete_map =city_color_map,trendline="ols",trendline_color_override="grey",trendline_scope='overall',title='Scatterplot of the windspeed difference vs temperature',labels={'temp_diff':'Temperature difference','speed':'Windspeed (km/h)',"country": "Country"})
+    fig4=px.scatter(current_weather,x='temp_diff',y='speed',color='country',color_discrete_map =city_color_map,trendline="ols",trendline_color_override="grey",trendline_scope='overall',title='Scatterplot of the windspeed vs temperature difference',labels={'temp_diff':'Temperature difference','speed':'Windspeed (km/h)',"country": "Country"})
     st.plotly_chart(fig4)
     img1 = Image.open("summary speed.png")
     st.image(img1, width=800)
