@@ -29,7 +29,7 @@ st.sidebar.write('Maarten van der Veer')
 
 
 # In[ ]:
-if rad== 'Home'
+if rad== 'Home':
     st.title('Dashboard (forecast) weather')
     imghome = Image.open("weer.png")
     st.image(imghome, width=800)
