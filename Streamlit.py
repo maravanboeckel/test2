@@ -134,7 +134,7 @@ if rad == 'Current weather map':
             color = 'green'
             return color
         elif pressure >= 1022:
-            color = 'red'
+            color = 'orange'
             return color
 
 
