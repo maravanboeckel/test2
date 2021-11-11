@@ -82,7 +82,8 @@ if rad == 'Plotting current weather':
                        labels={'humidity':'Humidity', 'country':'Country'})
     fig1.update_layout(title = "Humidity levels for each country", yaxis_title="Frequency")
     fig1.update_layout({'updatemenus':[{'type': "dropdown",'showactive': True,'active': 0,'buttons': dropdown_buttons}]})
-    #fig.update_xaxes(scaleanchor = "x",scaleratio = 1)
+    fig.update_xaxes(fixedrange=True)
+    fig.update_yaxes(fixedrange=True)
     st.plotly_chart(fig1)
 
 
