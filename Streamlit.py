@@ -214,7 +214,7 @@ if rad == 'Current weather map':
 # In[ ]:
 
 
-if rad == 'Weather forecast map':
+if rad == 'Forecast weather map':
     
     forecast_weather = pd.read_csv('forecast_sorted.csv')
     
@@ -554,7 +554,7 @@ if rad == 'Weather forecast map':
     folium.LayerControl(position='topleft', title='Dagen').add_to(map)
 
 
-    map
+    folium_static(map)
     
     
 
@@ -565,12 +565,5 @@ if rad == 'Weather forecast map':
 
 if rad == 'Plotting forecast weather':
 
-    fig4 = go.Figure()
-    for x in list(forecast['Date'].unique()):
-            df11 = forecast[forecast['Date'] == x]
-            fig4.add_trace(go.Bar(x=df11['name'], y=df11['temp_c'], name=x))
 
-    hour_to_filter = st.slider('Date', '2021-11-08 12:00:00', '2021-11-13 09:00:00', '2021-11-08 12:00:00')  
-    filtered_data = Forecast_compleet[Forecast_compleet['Date']== hour_to_filter]        
-    st.map(filtered_data)
 
