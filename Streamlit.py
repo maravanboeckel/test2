@@ -903,7 +903,7 @@ if rad == 'Plotting forecast weather':
             figfr.add_trace(go.Bar(x=df12['name'], y=df12['temp_c'], name=x))
         figfr.update_layout({'sliders': sliders})  
         figfr.update_layout(yaxis_range=[0,20])
-        figfr.update_xaxes(categoryarray=["Paris","Lille","Arrondissement de Marseille","Bordeaux","Arrondissement de Nantes","Toulouse","Lyon","Montpellier","Arrondissement de Nancy","Brest"])
+        figfr.update_xaxes(categoryarray=["Paris","Lille","Arrondissement de Marseille","Bordeaux","Arrondissement de Nantes","Toulouse","Arrondissement de Lyon","Montpellier","Arrondissement de Nancy","Brest"])
         figfr.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
         st.plotly_chart(figfr)                        
     if dropdown=="Germany" :
@@ -944,7 +944,7 @@ if rad == 'Plotting forecast weather':
             figbe.add_trace(go.Bar(x=df16['name'], y=df16['temp_c'], name=x))
         figbe.update_layout({'sliders': sliders})   
         figbe.update_layout(yaxis_range=[0,15])
-        figbe.update_xaxes(categoryarray=['Antwerpen','Brussel','Gent','Luik','Charleroi','Brugse','Namur','Leuven','Mons','Aalst']) 
+        figbe.update_xaxes(categoryarray=['Antwerp','Brussel','Ghent','Luik','Charleroi','Bruges','Namur','Leuven','Mons','Aalst']) 
         figbe.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
         st.plotly_chart(figbe)                          
     if dropdown=="Denmark" :
@@ -1045,7 +1045,7 @@ if rad == 'Plotting forecast weather':
             figcr.add_trace(go.Bar(x=df27['name'], y=df27['temp_c'], name=x))
         figcr.update_layout({'sliders': sliders}) 
         figcr.update_layout(yaxis_range=[0,20])
-        figcr.update_xaxes(categoryarray=['Osjiek','Rijeka','Zadar','Split','Slavonski Brod','Virovitica']) 
+        figcr.update_xaxes(categoryarray=['Osijek','Rijeka','Zadar','Split','Slavonski Brod','Virovitica','Donji grad']) 
         figcr.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
         st.plotly_chart(figcr)                        
                               
