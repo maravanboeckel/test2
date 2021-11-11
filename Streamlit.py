@@ -143,7 +143,7 @@ if rad == 'Current weather map':
             color = 'red'
             return color
 
-    current_weather_map = folium.map(location=[52.0893191, 5.1101691], zoom_start = 4)
+    current_weather_map = folium.Map(location=[52.0893191, 5.1101691], zoom_start = 4)
 
 
 
