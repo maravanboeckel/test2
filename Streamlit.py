@@ -884,73 +884,124 @@ if rad == 'Plotting forecast weather':
         
     
                        
-                            
+                 
     if dropdown=="Netherlands" :
-        fignl = px.bar(data_nl, x="name", y="temp_c") 
+        fignl = go.Figure()
+        for x in list(data_nl['Date'].unique()):
+            df11 = data_nl[data_nl['Date'] == x]
+            fig.add_trace(go.Bar(x=df11['name'], y=df11['temp_c'], name=x))
         fignl.update_layout({'sliders': sliders})      
         st.plotly_chart(fignl)
     if dropdown=="France" :
-        figfr = px.bar(data_fr, x="name", y="temp_c") 
+        figfr = go.Figure()
+        for x in list(data_fr['Date'].unique()):
+            df12 = data_fr[data_fr['Date'] == x]
+            figfr.add_trace(go.Bar(x=df12['name'], y=df12['temp_c'], name=x))
         figfr.update_layout({'sliders': sliders})      
         st.plotly_chart(figfr)                        
     if dropdown=="Germany" :
-        figge = px.bar(data_ge, x="name", y="temp_c") 
+        figge = go.Figure()
+        for x in list(data_ge['Date'].unique()):
+            df13 = data_ge[data_ge['Date'] == x]
+            figge.add_trace(go.Bar(x=df13['name'], y=df13['temp_c'], name=x))
         figge.update_layout({'sliders': sliders})      
         st.plotly_chart(figge)                       
     if dropdown=="Portugal" :
-        figpt = px.bar(data_nl, x="name", y="temp_c") 
+        figpt = go.Figure()
+        for x in list(data_pt['Date'].unique()):
+            df14 = data_pt[data_pt['Date'] == x]
+            figpt.add_trace(go.Bar(x=df14['name'], y=df14['temp_c'], name=x))
         figpt.update_layout({'sliders': sliders})      
         st.plotly_chart(figpt)                            
     if dropdown=="United Kingdom" :
-        figuk = px.bar(data_uk, x="name", y="temp_c") 
+        figuk = go.Figure()
+        for x in list(data_uk['Date'].unique()):
+            df15 = data_uk[data_uk['Date'] == x]
+            figuk.add_trace(go.Bar(x=df15['name'], y=df15['temp_c'], name=x))
         figuk.update_layout({'sliders': sliders})      
         st.plotly_chart(figuk)                            
     if dropdown=="Belgium" :
-        figbe = px.bar(data_be, x="name", y="temp_c") 
+        figbe = go.Figure()
+        for x in list(data_be['Date'].unique()):
+            df16 = data_be[data_be['Date'] == x]
+            figbe.add_trace(go.Bar(x=df16['name'], y=df16['temp_c'], name=x))
         figbe.update_layout({'sliders': sliders})      
         st.plotly_chart(figbe)                          
     if dropdown=="Denmark" :
-        figdk = px.bar(data_dk, x="name", y="temp_c") 
+        figdk = go.Figure()
+        for x in list(data_dk['Date'].unique()):
+            df17 = data_dk[data_dk['Date'] == x]
+            figdk.add_trace(go.Bar(x=df17['name'], y=df17['temp_c'], name=x))
         figdk.update_layout({'sliders': sliders})      
         st.plotly_chart(figdk)                           
     if dropdown=="Spain" :
-        figes = px.bar(data_es, x="name", y="temp_c") 
+        figes = go.Figure()
+        for x in list(data_es['Date'].unique()):
+            df18 = data_es[data_es['Date'] == x]
+            figes.add_trace(go.Bar(x=df18['name'], y=df18['temp_c'], name=x))
         figes.update_layout({'sliders': sliders})      
         st.plotly_chart(figes)                            
     if dropdown=="Ireland" :
-        figie = px.bar(data_ie, x="name", y="temp_c") 
+        figie= go.Figure()
+        for x in list(data_ie['Date'].unique()):
+            df19 = data_ie[data_ie['Date'] == x]
+            figie.add_trace(go.Bar(x=df19['name'], y=df19['temp_c'], name=x))
         figie.update_layout({'sliders': sliders})      
         st.plotly_chart(figie)                            
     if dropdown=="Italy" :
-        figit = px.bar(data_it, x="name", y="temp_c") 
+        figit = go.Figure()
+        for x in list(data_it['Date'].unique()):
+            df20 = data_it[data_it['Date'] == x]
+            figit.add_trace(go.Bar(x=df20['name'], y=df20['temp_c'], name=x))
         figit.update_layout({'sliders': sliders})      
         st.plotly_chart(figit)                           
     if dropdown=="Greece" :
-        figgr = px.bar(data_gr, x="name", y="temp_c") 
+        figgr = go.Figure()
+        for x in list(data_gr['Date'].unique()):
+            df21 = data_gr[data_gr['Date'] == x]
+            figgr.add_trace(go.Bar(x=df21['name'], y=df21['temp_c'], name=x))
         figgr.update_layout({'sliders': sliders})      
         st.plotly_chart(figgr)                            
     if dropdown=="Austria" : 
-        figau = px.bar(data_au, x="name", y="temp_c") 
+        figau = go.Figure()
+        for x in list(data_au['Date'].unique()):
+            df22 = data_au[data_au['Date'] == x]
+            figau.add_trace(go.Bar(x=df22['name'], y=df22['temp_c'], name=x))
         figau.update_layout({'sliders': sliders})      
         st.plotly_chart(figau)                            
     if dropdown=="Turkey" :
-        figtu = px.bar(data_tu, x="name", y="temp_c") 
+        figtu = go.Figure()
+        for x in list(data_tu['Date'].unique()):
+            df23 = data_tu[data_tu['Date'] == x]
+            figtu.add_trace(go.Bar(x=df23['name'], y=df23['temp_c'], name=x))
         figtu.update_layout({'sliders': sliders})      
         st.plotly_chart(figtu)                            
     if dropdown=="Romania" :
-        figro = px.bar(data_ro, x="name", y="temp_c") 
+        figro = go.Figure()
+        for x in list(data_ro['Date'].unique()):
+            df24 = data_ro[data_ro['Date'] == x]
+            figro.add_trace(go.Bar(x=df24['name'], y=df24['temp_c'], name=x))
         figro.update_layout({'sliders': sliders})      
         st.plotly_chart(figro)                            
     if dropdown=="Hungary" :
-        fighu = px.bar(data_hu, x="name", y="temp_c") 
+        fighu = go.Figure()
+        for x in list(data_hu['Date'].unique()):
+            df25 = data_hu[data_hu['Date'] == x]
+            fighu.add_trace(go.Bar(x=df25['name'], y=df25['temp_c'], name=x))
         fighu.update_layout({'sliders': sliders})      
         st.plotly_chart(fighu)                            
     if dropdown=="Bulgaria" :
-        figbu = px.bar(data_bu, x="name", y="temp_c") 
+        figbu = go.Figure()
+        for x in list(data_bu['Date'].unique()):
+            d26 = data_bu[data_bu['Date'] == x]
+            figbu.add_trace(go.Bar(x=df26['name'], y=df26['temp_c'], name=x))
         figbu.update_layout({'sliders': sliders})      
         st.plotly_chart(figbu)                         
     if dropdown=="Croatia" :  
-        figcr = px.bar(data_cr, x="name", y="temp_c") 
+        figcr = go.Figure()
+        for x in list(data_cr['Date'].unique()):
+            df27 = data_cr[data_cr['Date'] == x]
+            figcr.add_trace(go.Bar(x=df27['name'], y=df27['temp_c'], name=x))
         figcr.update_layout({'sliders': sliders})      
         st.plotly_chart(figcr)                        
                               
