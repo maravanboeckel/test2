@@ -188,7 +188,7 @@ if rad == 'Current weather map':
     for row in current_weather.iterrows():
         row_values=row[1]
         location=[row_values['lat'], row_values['lon']]
-        marker = folium.Marker(location=location,tooltip =str(round(row_values['temp_c'],2))+ '°C'
+        marker = folium.Marker(location=location,tooltip =str(round(row_values['temp_c'],2))+ '°C')
         marker.add_to(effecten[2])
         effecten[2].add_to(current_weather_map)
 
