@@ -202,7 +202,7 @@ if rad == 'Current weather map':
     for row in current_weather.iterrows():
         row_values=row[1]
         location=[row_values['lat'], row_values['lon']]
-        marker = folium.CircleMarker(location=location,tooltip = str(round(row_values['feels_like_c'],2) '°C'),radius=6,fill=True,opacity=1,color=colorstemp(row_values['feels_like_c']))
+        marker = folium.CircleMarker(location=location,tooltip = str(round(row_values['feels_like_c'],2))+ '°C',radius=6,fill=True,opacity=1,color=colorstemp(row_values['feels_like_c']))
         marker.add_to(effecten[4])
         effecten[4].add_to(current_weather_map)
 
