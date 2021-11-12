@@ -1015,7 +1015,7 @@ if rad == 'Plotting forecast weather':
             df23 = data_tu[data_tu['dt_txt'] == x]
             figtu.add_trace(go.Bar(x=df23['name'], y=df23['temp_c'], name=x))
         figtu.update_layout({'sliders': sliders})   
-        figtu.update_layout(yaxis_range=[0,30])
+        figtu.update_layout(yaxis_range=[-5,30])
         figtu.update_xaxes(categoryarray=['Istanbul','Bursa','İzmir','Antalya Province','Konya Province','Adana Province','Gaziantep','Kozluk','Erzurum Province']) 
         figtu.update_layout(title="Barplot of the temperature per city",yaxis_title="Temperature (°C)")
         st.plotly_chart(figtu)                            
