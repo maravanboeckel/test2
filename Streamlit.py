@@ -184,7 +184,7 @@ if rad == 'Current weather map':
     for row in current_weather.iterrows():
         row_values=row[1]
         location=[row_values['lat'], row_values['lon']]
-        marker = folium.plugins.BoatMarker(location=location,heading = row_values['deg'],tooltip = tooltip)
+        marker = folium.plugins.BoatMarker(location=location,heading = row_values['deg'],tooltip =  'Windspeed: ' + str(round(row_values['speed'],2)) + 'km/h')
         marker.add_to(effecten[1])
         effecten[1].add_to(current_weather_map)
 
